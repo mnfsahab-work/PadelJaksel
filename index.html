@@ -8,8 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a court-sheet. Headline share on top, a 7-day strip (past | today | upcoming),
-   then one card per day with its top 3, then the full table for the chosen day. */
+/* Layout: a court-sheet. Pick a venue and an area, then: headline share, a 7-day strip
+   (past | today | upcoming), one card per day with its top 3, and the full table. */
 :root {
   --bg: #f5f7f8;
   --surface: #ffffff;
@@ -17,9 +17,9 @@
   --ink-2: #4a5a64;
   --ink-3: #7d8b93;
   --line: #dde3e6;
-  --air: #0a7cc2;        /* Air Padel: open-sky blue, the only accent */
-  --air-soft: #e3f1fa;
-  --other: #9aa8b0;      /* every other brand */
+  --focus: #0a7cc2;      /* the venue being evaluated: open-sky blue, the only accent */
+  --focus-soft: #e3f1fa;
+  --other: #9aa8b0;      /* every competitor */
   --track: #ebeff1;
   --good: #1d7a4a; --good-bg: #e2f3e9;
   --warn: #8a5a00; --warn-bg: #fbf0d9;
@@ -30,13 +30,13 @@
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #0e171d; --surface: #15222a; --ink: #e6edf1; --ink-2: #a9b8c1; --ink-3: #7c8d97;
-  --line: #26363f; --air: #4cb3f0; --air-soft: #15324a; --other: #61737e; --track: #1f2e37;
+  --line: #26363f; --focus: #4cb3f0; --focus-soft: #15324a; --other: #61737e; --track: #1f2e37;
   --good: #6fd19c; --good-bg: #15342a; --warn: #f0c060; --warn-bg: #3a2e14; --muted-bg: #1c2a32;
   color-scheme: dark;
 } }
 :root[data-theme="dark"] {
   --bg: #0e171d; --surface: #15222a; --ink: #e6edf1; --ink-2: #a9b8c1; --ink-3: #7c8d97;
-  --line: #26363f; --air: #4cb3f0; --air-soft: #15324a; --other: #61737e; --track: #1f2e37;
+  --line: #26363f; --focus: #4cb3f0; --focus-soft: #15324a; --other: #61737e; --track: #1f2e37;
   --good: #6fd19c; --good-bg: #15342a; --warn: #f0c060; --warn-bg: #3a2e14; --muted-bg: #1c2a32;
   color-scheme: dark;
 }
@@ -46,19 +46,39 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 .wrap > * { min-width: 0; }
 h1, h2, h3 { font-family: var(--f-display); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
 h1 { font-size: clamp(26px, 4vw, 38px); font-weight: 700; line-height: 1.1; }
+h1 em { font-style: normal; color: var(--focus); }
 h2 { font-size: 20px; font-weight: 600; }
 .eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); font-weight: 600; }
 .num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
 .muted { color: var(--ink-3); }
 header { display: grid; gap: 10px; }
-header p { margin: 0; color: var(--ink-2); max-width: 68ch; }
+header p { margin: 0; color: var(--ink-2); max-width: 70ch; }
 .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--ink-3); }
 .meta b { color: var(--ink-2); font-weight: 500; }
 
+/* Filters */
+.filters { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: end; }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field label, .field .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); font-weight: 600; }
+.field.grow { flex: 1 1 300px; }
+.search { position: relative; }
+.search input { width: 100%; font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; }
+.search input:focus { outline: 2px solid var(--focus); outline-offset: 1px; }
+.results { position: absolute; z-index: 10; left: 0; right: 0; top: calc(100% + 4px); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; max-height: 320px; overflow-y: auto; box-shadow: 0 8px 24px rgba(0,0,0,.12); padding: 4px; }
+.results button { display: flex; width: 100%; justify-content: space-between; gap: 10px; text-align: left; font: inherit; color: var(--ink); background: none; border: 0; border-radius: 6px; padding: 7px 9px; cursor: pointer; }
+.results button:hover, .results button.active { background: var(--focus-soft); }
+.results small { color: var(--ink-3); white-space: nowrap; }
+.seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--bg); }
+.seg button { font: inherit; font-size: 14px; color: var(--ink-2); background: none; border: 0; padding: 8px 12px; cursor: pointer; border-right: 1px solid var(--line); }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--focus); color: var(--surface); font-weight: 600; }
+.seg button:disabled { color: var(--ink-3); cursor: not-allowed; opacity: .6; }
+.scope-note { flex-basis: 100%; font-size: 13px; color: var(--ink-2); margin: 0; }
+
 /* Headline row */
-.hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
-.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: grid; gap: 4px; min-width: 0; }
-.tile .big { font-family: var(--f-display); font-size: 40px; font-weight: 700; line-height: 1; color: var(--air); font-variant-numeric: tabular-nums; }
+.hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.tile .big { font-family: var(--f-display); font-size: 40px; font-weight: 700; line-height: 1; color: var(--focus); font-variant-numeric: tabular-nums; }
 .tile .big.ink { color: var(--ink); }
 .tile .sub { font-size: 13px; color: var(--ink-2); }
 
@@ -71,37 +91,38 @@ header p { margin: 0; color: var(--ink-2); max-width: 68ch; }
 svg text { fill: var(--ink-2); font-family: var(--f-body); font-size: 12px; }
 svg .val { fill: var(--ink); font-family: var(--f-mono); font-size: 12px; font-weight: 500; }
 svg .grid { stroke: var(--line); stroke-width: 1; }
-svg .bar { fill: var(--air); }
+svg .bar { fill: var(--focus); }
 svg .bar-hit { fill: transparent; cursor: pointer; }
-svg .col-today { fill: var(--air-soft); }
+svg .col-today { fill: var(--focus-soft); }
 svg .pending { fill: var(--track); }
-.tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--bg); padding: 8px 10px; border-radius: 6px; font-size: 12px; line-height: 1.45; z-index: 5; max-width: 260px; }
+.tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--bg); padding: 8px 10px; border-radius: 6px; font-size: 12px; line-height: 1.45; z-index: 20; max-width: 270px; }
 
 /* Day cards */
 .days { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
 .day { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 10px; align-content: start; text-align: left; font: inherit; color: inherit; cursor: pointer; min-width: 0; }
-.day:hover { border-color: var(--ink-3); }
-.day:focus-visible, button:focus-visible { outline: 2px solid var(--air); outline-offset: 2px; }
-.day[aria-pressed="true"] { border-color: var(--air); box-shadow: 0 0 0 1px var(--air) inset; }
+.day:hover:not(:disabled) { border-color: var(--ink-3); }
+.day:disabled { cursor: default; }
+.day:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.day[aria-pressed="true"] { border-color: var(--focus); box-shadow: 0 0 0 1px var(--focus) inset; }
 .day-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .day-date { font-family: var(--f-display); font-weight: 600; font-size: 17px; }
 .chip { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; white-space: nowrap; }
 .chip.final { background: var(--good-bg); color: var(--good); }
-.chip.live { background: var(--air-soft); color: var(--air); }
+.chip.live { background: var(--focus-soft); color: var(--focus); }
 .chip.ahead { background: var(--muted-bg); color: var(--ink-2); }
 .chip.partial { background: var(--warn-bg); color: var(--warn); }
 .chip.none { background: var(--muted-bg); color: var(--ink-3); }
-.air-line { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 13px; color: var(--ink-2); }
-.air-line .num { font-size: 22px; color: var(--air); font-weight: 500; }
+.focus-line { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 13px; color: var(--ink-2); }
+.focus-line .num { font-size: 22px; color: var(--focus); font-weight: 500; }
 .rank { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.rank li { display: grid; grid-template-columns: 18px 1fr auto; gap: 2px 8px; align-items: center; font-size: 13px; }
+.rank li { display: grid; grid-template-columns: 22px 1fr auto; gap: 2px 8px; align-items: center; font-size: 13px; }
 .rank .pos { font-family: var(--f-mono); color: var(--ink-3); }
 .rank .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 .rank .pct { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
 .rank .meter { grid-column: 2 / 4; height: 6px; background: var(--track); border-radius: 3px; overflow: hidden; }
 .rank .meter span { display: block; height: 100%; background: var(--other); border-radius: 3px; }
-.rank li.is-air .name, .rank li.is-air .pct { color: var(--air); font-weight: 600; }
-.rank li.is-air .meter span { background: var(--air); }
+.rank li.is-focus .name, .rank li.is-focus .pct { color: var(--focus); font-weight: 600; }
+.rank li.is-focus .meter span { background: var(--focus); }
 .rank li.sep { border-top: 1px dashed var(--line); padding-top: 8px; }
 .empty { font-size: 13px; color: var(--ink-3); padding: 6px 0; }
 
@@ -112,7 +133,7 @@ th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: ri
 th:nth-child(2), td:nth-child(2) { text-align: left; white-space: normal; min-width: 180px; }
 th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); font-weight: 600; }
 td { font-variant-numeric: tabular-nums; }
-tr.is-air td { color: var(--air); font-weight: 600; background: var(--air-soft); }
+tr.is-focus td { color: var(--focus); font-weight: 600; background: var(--focus-soft); }
 td .venues { display: block; font-size: 12px; color: var(--ink-3); font-weight: 400; }
 .notes { font-size: 13px; color: var(--ink-2); display: grid; gap: 6px; max-width: 80ch; }
 .notes ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
@@ -123,11 +144,38 @@ td .venues { display: block; font-size: 12px; color: var(--ink-3); font-weight: 
 <body>
 <div class="wrap">
   <header>
-    <div class="eyebrow">Padel courts · Kota Jakarta Selatan · source: ayo.co.id</div>
-    <h1>How much of South Jakarta's padel play does Air Padel book?</h1>
-    <p>Market share by court-hours booked on AYO: Air Padel against every other padel venue in Jakarta Selatan, for the last 3 days, today and the next 3 days, with the top 3 brands for each day.</p>
+    <div class="eyebrow" id="eyebrow">Padel courts on AYO · source: ayo.co.id</div>
+    <h1 id="headline">How much padel play does your venue book?</h1>
+    <p id="lede">Market share by court-hours booked on AYO for the last 3 days, today and the next 3 days, with the top 3 competitors each day.</p>
     <div class="meta" id="meta"></div>
   </header>
+
+  <section class="filters" aria-label="Filters">
+    <div class="field grow">
+      <label for="venue-q">Venue to evaluate</label>
+      <div class="search">
+        <input id="venue-q" type="search" autocomplete="off" placeholder="Search any padel venue on AYO" role="combobox" aria-expanded="false" aria-controls="venue-results">
+        <div class="results" id="venue-results" role="listbox" hidden></div>
+      </div>
+    </div>
+    <div class="field">
+      <span class="label" id="area-label">Market area</span>
+      <div class="seg" id="area" role="group" aria-labelledby="area-label">
+        <button type="button" data-area="5">Within 5 km</button>
+        <button type="button" data-area="10">Within 10 km</button>
+        <button type="button" data-area="city">Same city</button>
+        <button type="button" data-area="province">Same province</button>
+      </div>
+    </div>
+    <div class="field">
+      <span class="label" id="rankby-label">Rank competitors by</span>
+      <div class="seg" id="rankby" role="group" aria-labelledby="rankby-label">
+        <button type="button" data-rank="brand">Brand</button>
+        <button type="button" data-rank="venue">Venue</button>
+      </div>
+    </div>
+    <p class="scope-note" id="scope-note"></p>
+  </section>
 
   <div id="error" class="error" hidden></div>
 
@@ -135,14 +183,14 @@ td .venues { display: block; font-size: 12px; color: var(--ink-3); font-weight: 
 
   <section class="panel" aria-labelledby="chart-title">
     <div class="panel-head">
-      <h2 id="chart-title">Air Padel share of booked court-hours, by day</h2>
-      <div class="legend"><span><i style="background:var(--air)"></i>Air Padel share</span><span><i style="background:var(--track)"></i>No data yet</span></div>
+      <h2 id="chart-title">Share of booked court-hours, by day</h2>
+      <div class="legend"><span><i style="background:var(--focus)"></i><span id="legend-name">Selected venue</span></span><span><i style="background:var(--track)"></i>No data yet</span></div>
     </div>
-    <div class="chart-scroll"><svg id="chart" role="img" aria-label="Air Padel daily market share"></svg></div>
+    <div class="chart-scroll"><svg id="chart" role="img" aria-label="Daily market share"></svg></div>
   </section>
 
-  <section aria-labelledby="days-title" style="display:grid;gap:12px">
-    <div class="panel-head"><h2 id="days-title">Top 3 brands each day</h2><span class="muted" style="font-size:13px">Pick a day to see every venue below.</span></div>
+  <section style="display:grid;gap:12px">
+    <div class="panel-head"><h2>Top 3 each day</h2><span class="muted" style="font-size:13px">Pick a day to see the full ranking below.</span></div>
     <div class="days" id="days"></div>
   </section>
 
@@ -154,9 +202,9 @@ td .venues { display: block; font-size: 12px; color: var(--ink-3); font-weight: 
   <section class="notes" aria-labelledby="notes-title">
     <h2 id="notes-title" style="font-size:16px">How the numbers are made</h2>
     <ul>
-      <li><b>Court-hour booked</b> = an AYO slot marked unavailable. Hours blocked by the venue itself (coaching, maintenance, members) look the same on AYO and are counted too.</li>
-      <li><b>Market</b> = all padel venues AYO lists in Kota Jakarta Selatan. Padel simulators are excluded. Venues that take bookings outside AYO only show their AYO calendar.</li>
-      <li><b>Brands</b>: chains are ranked as one brand. Air Padel = AIR Padel + AIR Padel Active. Republic Padel, Metropolar Padel and Padel Parc are grouped the same way.</li>
+      <li><b>Court-hour booked</b> = an AYO slot marked unavailable. Hours a venue blocks itself (coaching, maintenance, members) look the same on AYO and are counted too.</li>
+      <li><b>Market</b> = padel venues on AYO inside the chosen area. "Within 5 / 10 km" is straight-line distance from any of the selected brand's venues; "Same city / province" uses the city and province AYO lists for each venue. Padel simulators are excluded. Bookings taken outside AYO are not visible.</li>
+      <li><b>Brands</b>: the selected venue is evaluated together with its sister venues (e.g. AIR Padel + AIR Padel Active). Known chains are grouped when ranking by brand; switch to "Venue" to rank each location separately.</li>
       <li><b>Past days</b>: AYO hides slots once they start, so a job saves every slot's last seen state every 30 minutes. Days before tracking began have no data; the first tracked day is partial.</li>
       <li><b>Upcoming days</b> show bookings made so far and will grow until the day is played.</li>
     </ul>
@@ -165,97 +213,181 @@ td .venues { display: block; font-size: 12px; color: var(--ink-3); font-weight: 
 <div class="tip" id="tip" hidden></div>
 
 <script>
-const AIR = "Air Padel";
+// Live data from the `data` branch; the relative path serves previews and local runs.
+const DATA_URLS = [
+  "https://raw.githubusercontent.com/mnfsahab-work/PadelJaksel/data/summary.json",
+  "data/summary.json",
+];
+const DEFAULT_BRAND = "Air Padel";
 const fmtPct = x => (x * 100).toFixed(1) + "%";
 const fmtH = x => (Math.round(x * 10) / 10).toLocaleString("en-US");
 const dayName = (iso, opts) => new Date(iso + "T00:00:00").toLocaleDateString("en-GB", opts);
-let state = { data: null, selected: null };
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch {} },
+};
 
-function brandsFor(day) {
-  const m = new Map();
-  for (const v of day.venues) {
-    const b = m.get(v.brand) || { brand: v.brand, booked: 0, capacity: 0, courts: 0, venues: [] };
-    b.booked += v.booked_hours; b.capacity += v.slot_hours; b.courts += v.courts; b.venues.push(v.name);
-    m.set(v.brand, b);
+let data = null;
+let ui = { brand: null, area: "city", rank: "brand", selected: null };
+let brands = new Map(); // brand -> { name, venues: [id], cities:Set, provinces:Set }
+
+function km(a, b) {
+  const R = 6371, toR = Math.PI / 180;
+  const dLat = (b.lat - a.lat) * toR, dLng = (b.lng - a.lng) * toR;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * toR) * Math.cos(b.lat * toR) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+const hasLoc = v => v && v.lat != null && v.lng != null;
+
+function indexBrands() {
+  brands = new Map();
+  for (const [id, v] of Object.entries(data.venues)) {
+    const b = brands.get(v.b) || { name: v.b, venues: [], cities: new Set(), provinces: new Set() };
+    b.venues.push(id); if (v.c) b.cities.add(v.c); if (v.p) b.provinces.add(v.p);
+    brands.set(v.b, b);
   }
-  const total = [...m.values()].reduce((s, b) => s + b.booked, 0);
-  const list = [...m.values()].map(b => ({ ...b, share: total ? b.booked / total : 0 }))
-    .sort((a, b) => b.booked - a.booked || a.brand.localeCompare(b.brand));
-  list.forEach((b, i) => b.rank = i + 1);
-  return { total, list, air: list.find(b => b.brand === AIR) };
 }
 
-function status(day, generated) {
-  if (!day.tracked || !day.venues.length) return { cls: "none", label: "Not tracked" };
-  const firstRunDay = (day.first_run || "").slice(0, 10);
-  if (day.offset < 0) return firstRunDay === day.date ? { cls: "partial", label: "Partial" } : { cls: "final", label: "Final" };
-  if (day.offset === 0) return firstRunDay === day.date ? { cls: "partial", label: "Today · partial" } : { cls: "live", label: "Today · live" };
+// Which venues are in the market, plus each one's distance to the nearest selected venue.
+function market() {
+  const focus = brands.get(ui.brand);
+  const fv = focus.venues.map(id => data.venues[id]);
+  const located = fv.filter(hasLoc);
+  const inScope = new Map();
+  for (const [id, v] of Object.entries(data.venues)) {
+    const dist = hasLoc(v) && located.length ? Math.min(...located.map(f => km(f, v))) : null;
+    let ok;
+    if (focus.venues.includes(id)) ok = true;
+    else if (ui.area === "city") ok = v.c && focus.cities.has(v.c);
+    else if (ui.area === "province") ok = v.p && focus.provinces.has(v.p);
+    else ok = dist != null && dist <= +ui.area;
+    if (ok) inScope.set(id, dist);
+  }
+  return { focus, inScope, located: located.length };
+}
+
+function aggregate(day, scope) {
+  const groups = new Map();
+  for (const [id, row] of Object.entries(day.v)) {
+    if (!scope.inScope.has(id)) continue;
+    const v = data.venues[id];
+    const isFocus = v.b === ui.brand;
+    const key = isFocus || ui.rank === "brand" ? "b:" + v.b : "v:" + id;
+    const g = groups.get(key) || { key, name: ui.rank === "brand" || isFocus ? v.b : v.n, isFocus, booked: 0, capacity: 0, courts: 0, venues: [], dist: null };
+    g.booked += row[0]; g.capacity += row[1]; g.courts += row[2]; g.venues.push(v.n);
+    const d = scope.inScope.get(id);
+    if (!isFocus && d != null) g.dist = g.dist == null ? d : Math.min(g.dist, d);
+    groups.set(key, g);
+  }
+  const total = [...groups.values()].reduce((s, g) => s + g.booked, 0);
+  const list = [...groups.values()].map(g => ({ ...g, share: total ? g.booked / total : 0 }))
+    .sort((a, b) => b.booked - a.booked || a.name.localeCompare(b.name));
+  list.forEach((g, i) => g.rank = i + 1);
+  return { total, list, focus: list.find(g => g.isFocus), venues: list.reduce((s, g) => s + g.venues.length, 0) };
+}
+
+function status(day) {
+  if (!day.tracked || !Object.keys(day.v).length) return { cls: "none", label: "Not tracked" };
+  const startedThatDay = (day.first_run || "").slice(0, 10) === day.date;
+  if (day.offset < 0) return startedThatDay ? { cls: "partial", label: "Partial" } : { cls: "final", label: "Final" };
+  if (day.offset === 0) return startedThatDay ? { cls: "partial", label: "Today · partial" } : { cls: "live", label: "Today · live" };
   return { cls: "ahead", label: "Booked so far" };
 }
 
+const areaText = (scope) => {
+  const f = scope.focus;
+  if (ui.area === "city") return [...f.cities].join(" & ") || "its city";
+  if (ui.area === "province") return [...f.provinces].join(" & ") || "its province";
+  return `${ui.area} km of ${f.venues.length > 1 ? "its venues" : "it"}`;
+};
+
 function render() {
-  const d = state.data;
-  const days = d.days.map(day => ({ ...day, agg: brandsFor(day), st: status(day, d.generated) }));
-  const gen = new Date(d.generated);
+  if (!data) return;
+  const scope = market();
+  const focus = scope.focus;
+  const days = data.days.map(day => ({ ...day, agg: aggregate(day, scope), st: status(day) }));
+  const where = areaText(scope);
+  const radius = ui.area === "5" || ui.area === "10";
+
+  // Filters state
+  document.querySelectorAll("#area button").forEach(b => {
+    b.setAttribute("aria-pressed", b.dataset.area === ui.area);
+    b.disabled = (b.dataset.area === "5" || b.dataset.area === "10") && !scope.located;
+  });
+  document.querySelectorAll("#rankby button").forEach(b => b.setAttribute("aria-pressed", b.dataset.rank === ui.rank));
+  const q = document.getElementById("venue-q");
+  if (document.activeElement !== q) q.value = focus.name;
+  const sisters = focus.venues.map(id => data.venues[id].n);
+  const marketVenues = scope.inScope.size;
+  document.getElementById("scope-note").innerHTML =
+    `Evaluating <b>${esc(focus.name)}</b>${sisters.length > 1 || sisters[0] !== focus.name ? ` (${sisters.map(esc).join(" + ")})` : ""} against <b>${marketVenues - focus.venues.length}</b> other padel venues ${radius ? "within" : "in"} ${esc(where)}.`;
+
+  document.getElementById("eyebrow").textContent = `Padel courts on AYO · ${radius ? "within " + ui.area + " km" : where} · source: ayo.co.id`;
+  document.getElementById("headline").innerHTML = `How much padel play ${radius ? "nearby" : "in " + esc(where)} does <em>${esc(focus.name)}</em> book?`;
+  document.getElementById("lede").textContent = `Share of court-hours booked on AYO: ${focus.name} against every other padel venue ${radius ? "within " + where : "in " + where}, for the last 3 days, today and the next 3 days, with the top 3 each day.`;
+  document.getElementById("legend-name").textContent = focus.name + " share";
+
+  const gen = new Date(data.generated);
   document.getElementById("meta").innerHTML =
     `<span>Last updated <b>${gen.toLocaleString("en-GB", { timeZone: "Asia/Jakarta", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} WIB</b></span>` +
-    `<span>Venues tracked <b>${new Set(days.flatMap(x => x.venues.map(v => v.id))).size}</b></span>` +
+    `<span>Venues tracked nationwide <b>${Object.keys(data.venues).length.toLocaleString("en-US")}</b></span>` +
     `<span>Refreshes every 30 min</span>`;
 
-  // Headline tiles: today, last 3 days (tracked only), next 3 days.
+  // Headline tiles
   const sumWin = sel => {
     const ds = days.filter(sel).filter(x => x.agg.total > 0);
-    const tot = ds.reduce((s, x) => s + x.agg.total, 0), air = ds.reduce((s, x) => s + (x.agg.air?.booked || 0), 0);
-    return { n: ds.length, share: tot ? air / tot : null, air, tot };
+    const tot = ds.reduce((s, x) => s + x.agg.total, 0), mine = ds.reduce((s, x) => s + (x.agg.focus?.booked || 0), 0);
+    return { share: tot ? mine / tot : null, mine, tot };
   };
-  const past = sumWin(x => x.offset < 0), today = sumWin(x => x.offset === 0), next = sumWin(x => x.offset > 0);
   const todayDay = days.find(x => x.offset === 0);
   const tile = (label, w, note) => `<div class="tile"><div class="eyebrow">${label}</div>
     <div class="big">${w.share == null ? "–" : fmtPct(w.share)}</div>
-    <div class="sub">${w.share == null ? note : `<span class="num">${fmtH(w.air)}</span> of <span class="num">${fmtH(w.tot)}</span> court-hours`}</div></div>`;
+    <div class="sub">${w.share == null ? note : `<span class="num">${fmtH(w.mine)}</span> of <span class="num">${fmtH(w.tot)}</span> court-hours`}</div></div>`;
   document.getElementById("hero").innerHTML =
-    tile("Last 3 days", past, "Collecting. Each past day fills in as tracking runs.") +
-    tile("Today", today, "No slots yet") +
-    tile("Next 3 days", next, "No bookings yet") +
-    `<div class="tile"><div class="eyebrow">Air Padel rank today</div><div class="big ink">${todayDay?.agg.air ? "#" + todayDay.agg.air.rank : "–"}</div>
-     <div class="sub">of ${todayDay?.agg.list.length || 0} brands · leader: ${todayDay?.agg.list[0]?.brand || "–"}</div></div>`;
+    tile("Last 3 days", sumWin(x => x.offset < 0), "Collecting. Each past day fills in as tracking runs.") +
+    tile("Today", sumWin(x => x.offset === 0), "No slots recorded yet") +
+    tile("Next 3 days", sumWin(x => x.offset > 0), "No bookings yet") +
+    `<div class="tile"><div class="eyebrow">Rank today</div><div class="big ink">${todayDay?.agg.focus ? "#" + todayDay.agg.focus.rank : "–"}</div>
+     <div class="sub">of ${todayDay?.agg.list.length || 0} ${ui.rank === "brand" ? "brands" : "competitors"} · leader: ${esc(todayDay?.agg.list[0]?.name || "–")}</div></div>`;
 
-  drawChart(days);
+  drawChart(days, focus.name);
 
-  if (!state.selected || !days.some(x => x.date === state.selected && x.agg.total))
-    state.selected = (days.find(x => x.offset === 0 && x.agg.total) || days.find(x => x.agg.total) || days[3]).date;
+  if (!state_selectedValid(days)) ui.selected = (days.find(x => x.offset === 0 && x.agg.total) || days.find(x => x.agg.total) || days[DAYS_BACK_INDEX(days)]).date;
 
   document.getElementById("days").innerHTML = days.map(day => {
     const { agg, st } = day;
-    const top = agg.list.slice(0, 3);
     const maxShare = agg.list[0]?.share || 1;
-    const row = (b, extra = "") => `<li class="${b.brand === AIR ? "is-air" : ""} ${extra}"><span class="pos">${b.rank}</span>
-      <span class="name" title="${b.venues.join(", ")}">${b.brand}</span><span class="pct">${fmtPct(b.share)}</span>
-      <span class="meter"><span style="width:${(b.share / maxShare * 100).toFixed(1)}%"></span></span></li>`;
+    const row = (g, extra = "") => `<li class="${g.isFocus ? "is-focus" : ""} ${extra}"><span class="pos">${g.rank}</span>
+      <span class="name" title="${esc(g.venues.join(", "))}">${esc(g.name)}</span><span class="pct">${fmtPct(g.share)}</span>
+      <span class="meter"><span style="width:${(g.share / maxShare * 100).toFixed(1)}%"></span></span></li>`;
     let body;
-    if (!agg.total) body = `<div class="empty">${day.offset < 0 ? "Before tracking started. No saved snapshot for this day." : "No booked hours recorded yet."}</div>`;
-    else body = `<div class="air-line"><span>Air Padel share</span><span class="num">${agg.air ? fmtPct(agg.air.share) : "0.0%"}</span></div>
-      <ol class="rank">${top.map(b => row(b)).join("")}${agg.air && agg.air.rank > 3 ? row(agg.air, "sep") : ""}</ol>`;
-    return `<button class="day" type="button" data-date="${day.date}" aria-pressed="${day.date === state.selected}" ${agg.total ? "" : "disabled"}>
+    if (!agg.total) body = `<div class="empty">${!day.tracked ? "Before tracking started. No saved snapshot for this day." : "No booked hours recorded in this area."}</div>`;
+    else body = `<div class="focus-line"><span>${esc(focus.name)} share</span><span class="num">${agg.focus ? fmtPct(agg.focus.share) : "0.0%"}</span></div>
+      <ol class="rank">${agg.list.slice(0, 3).map(g => row(g)).join("")}${agg.focus && agg.focus.rank > 3 ? row(agg.focus, "sep") : ""}</ol>`;
+    return `<button class="day" type="button" data-date="${day.date}" aria-pressed="${day.date === ui.selected}" ${agg.total ? "" : "disabled"}>
       <div class="day-head"><span class="day-date">${dayName(day.date, { weekday: "short", day: "numeric", month: "short" })}</span><span class="chip ${st.cls}">${st.label}</span></div>
       ${body}</button>`;
   }).join("");
-  document.querySelectorAll(".day").forEach(b => b.addEventListener("click", () => { state.selected = b.dataset.date; render(); }));
+  document.querySelectorAll(".day").forEach(b => b.addEventListener("click", () => { ui.selected = b.dataset.date; render(); }));
 
-  const sel = days.find(x => x.date === state.selected);
+  const sel = days.find(x => x.date === ui.selected);
   document.getElementById("table-sub").textContent = sel ? `${dayName(sel.date, { weekday: "long", day: "numeric", month: "long" })} · ${sel.st.label} · ${fmtH(sel.agg.total)} court-hours booked` : "";
-  document.getElementById("table").innerHTML = `<thead><tr><th>#</th><th>Brand</th><th>Courts</th><th>Booked h</th><th>Open slots h</th><th>Utilisation</th><th>Share</th></tr></thead><tbody>` +
-    (sel ? sel.agg.list.map(b => `<tr class="${b.brand === AIR ? "is-air" : ""}"><td>${b.rank}</td><td>${b.brand}${b.venues.length > 1 || b.venues[0] !== b.brand ? `<span class="venues">${b.venues.join(" · ")}</span>` : ""}</td>
-      <td>${b.courts}</td><td>${fmtH(b.booked)}</td><td>${fmtH(b.capacity)}</td><td>${b.capacity ? fmtPct(b.booked / b.capacity) : "–"}</td><td>${fmtPct(b.share)}</td></tr>`).join("") : "") + `</tbody>`;
+  document.getElementById("table").innerHTML = `<thead><tr><th>#</th><th>${ui.rank === "brand" ? "Brand" : "Venue"}</th>${radius ? "<th>Distance</th>" : ""}<th>Courts</th><th>Booked h</th><th>Open slots h</th><th>Utilisation</th><th>Share</th></tr></thead><tbody>` +
+    (sel ? sel.agg.list.map(g => `<tr class="${g.isFocus ? "is-focus" : ""}"><td>${g.rank}</td><td>${esc(g.name)}${g.venues.length > 1 || g.venues[0] !== g.name ? `<span class="venues">${g.venues.map(esc).join(" · ")}</span>` : ""}</td>
+      ${radius ? `<td>${g.isFocus ? "–" : g.dist != null ? g.dist.toFixed(1) + " km" : "–"}</td>` : ""}
+      <td>${g.courts}</td><td>${fmtH(g.booked)}</td><td>${fmtH(g.capacity)}</td><td>${g.capacity ? fmtPct(g.booked / g.capacity) : "–"}</td><td>${fmtPct(g.share)}</td></tr>`).join("") : "") + `</tbody>`;
 }
+const state_selectedValid = days => ui.selected && days.some(x => x.date === ui.selected && x.agg.total);
+const DAYS_BACK_INDEX = days => Math.max(0, days.findIndex(x => x.offset === 0));
 
-function drawChart(days) {
+function drawChart(days, name) {
   const svg = document.getElementById("chart");
   const W = 760, H = 240, padL = 44, padR = 12, padT = 22, padB = 46;
-  const vals = days.map(x => x.agg.total ? (x.agg.air?.share || 0) : null);
+  const vals = days.map(x => x.agg.total ? (x.agg.focus?.share || 0) : null);
   const maxV = Math.max(0.05, ...vals.filter(v => v != null));
-  const step = maxV > 0.2 ? 0.1 : maxV > 0.1 ? 0.05 : 0.02;
-  const top = Math.ceil(maxV / step) * step;
+  const step = maxV > 0.5 ? 0.2 : maxV > 0.2 ? 0.1 : maxV > 0.1 ? 0.05 : 0.02;
+  const top = Math.min(1, Math.ceil(maxV / step) * step);
   const y = v => padT + (H - padT - padB) * (1 - v / top);
   const cw = (W - padL - padR) / days.length, bw = Math.min(56, cw * 0.5);
   let s = "";
@@ -264,10 +396,10 @@ function drawChart(days) {
   for (let t = 0; t <= top + 1e-9; t += step) s += `<line class="grid" x1="${padL}" x2="${W - padR}" y1="${y(t)}" y2="${y(t)}"/><text x="${padL - 8}" y="${y(t) + 4}" text-anchor="end">${Math.round(t * 100)}%</text>`;
   days.forEach((day, i) => {
     const cx = padL + cw * i + cw / 2, v = vals[i];
-    if (v == null) s += `<rect class="pending" x="${cx - bw / 2}" y="${y(top) }" width="${bw}" height="${y(0) - y(top)}" rx="4"/><text x="${cx}" y="${y(top / 2)}" text-anchor="middle" class="muted">no data</text>`;
+    if (v == null) s += `<rect class="pending" x="${cx - bw / 2}" y="${y(top)}" width="${bw}" height="${y(0) - y(top)}" rx="4"/><text x="${cx}" y="${y(top / 2)}" text-anchor="middle">no data</text>`;
     else {
-      const h = Math.max(0, y(0) - y(v));
-      s += `<path class="bar" d="M${cx - bw / 2},${y(0)} v${-(h - 4 > 0 ? h - 4 : 0)} q0,-4 4,-4 h${bw - 8} q4,0 4,4 v${h - 4 > 0 ? h - 4 : 0} z"/>`;
+      const h = Math.max(0, y(0) - y(v)), r = Math.min(4, h);
+      s += `<path class="bar" d="M${cx - bw / 2},${y(0)} v${-(h - r)} q0,${-r} ${r},${-r} h${bw - 2 * r} q${r},0 ${r},${r} v${h - r} z"/>`;
       s += `<text class="val" x="${cx}" y="${y(v) - 6}" text-anchor="middle">${fmtPct(v)}</text>`;
     }
     s += `<text x="${cx}" y="${H - padB + 18}" text-anchor="middle">${dayName(day.date, { weekday: "short", day: "numeric" })}</text>`;
@@ -283,20 +415,83 @@ function drawChart(days) {
     r.addEventListener("mousemove", e => {
       const day = days[+r.dataset.i], a = day.agg;
       tip.innerHTML = `<b>${dayName(day.date, { weekday: "long", day: "numeric", month: "short" })}</b> · ${day.st.label}<br>` +
-        (a.total ? `Air Padel: ${fmtH(a.air?.booked || 0)} h (${fmtPct(a.air?.share || 0)}), rank #${a.air?.rank || "–"}<br>All venues: ${fmtH(a.total)} h booked` : "No saved data for this day");
+        (a.total ? `${esc(name)}: ${fmtH(a.focus?.booked || 0)} h (${fmtPct(a.focus?.share || 0)}), rank #${a.focus?.rank || "–"}<br>Whole area: ${fmtH(a.total)} h booked at ${a.venues} venues` : "No saved data for this day");
       tip.hidden = false;
-      tip.style.left = Math.min(e.clientX + 14, innerWidth - 270) + "px"; tip.style.top = e.clientY + 14 + "px";
+      tip.style.left = Math.min(e.clientX + 14, innerWidth - 280) + "px"; tip.style.top = e.clientY + 14 + "px";
     });
     r.addEventListener("mouseleave", () => tip.hidden = true);
-    r.addEventListener("click", () => { const day = days[+r.dataset.i]; if (day.agg.total) { state.selected = day.date; render(); } });
+    r.addEventListener("click", () => { const day = days[+r.dataset.i]; if (day.agg.total) { ui.selected = day.date; render(); } });
   });
 }
 
-async function load() {
+// Venue search: matches brand names and individual venue names, shows city for context.
+function setupSearch() {
+  const q = document.getElementById("venue-q"), box = document.getElementById("venue-results");
+  let items = [], active = -1;
+  const close = () => { box.hidden = true; q.setAttribute("aria-expanded", "false"); active = -1; };
+  const choose = brand => { ui.brand = brand; store.set("brand", brand); close(); q.blur(); ui.selected = null; render(); };
+  const show = () => {
+    const term = q.value.trim().toLowerCase();
+    const seen = new Set(); items = [];
+    if (term.length >= 1) {
+      for (const [id, v] of Object.entries(data.venues)) {
+        if (seen.has(v.b)) continue;
+        if (v.n.toLowerCase().includes(term) || v.b.toLowerCase().includes(term) || (v.c || "").toLowerCase().includes(term)) {
+          seen.add(v.b);
+          const b = brands.get(v.b);
+          const cities = [...b.cities];
+          items.push({ brand: v.b, hint: b.venues.length > 1 ? `${b.venues.length} venues · ${cities.slice(0, 2).join(", ")}` : (v.c || "") });
+        }
+        if (items.length >= 40) break;
+      }
+      items.sort((a, b) => (b.brand.toLowerCase().startsWith(term)) - (a.brand.toLowerCase().startsWith(term)) || a.brand.localeCompare(b.brand));
+    }
+    box.innerHTML = items.length ? items.map((it, i) => `<button type="button" role="option" data-i="${i}" class="${i === active ? "active" : ""}"><span>${esc(it.brand)}</span><small>${esc(it.hint)}</small></button>`).join("")
+      : `<div class="empty" style="padding:8px 10px">${term ? "No padel venue on AYO matches that name." : "Type a venue, brand or city."}</div>`;
+    box.hidden = false; q.setAttribute("aria-expanded", "true");
+    box.querySelectorAll("button").forEach(b => b.addEventListener("mousedown", e => { e.preventDefault(); choose(items[+b.dataset.i].brand); }));
+  };
+  q.addEventListener("focus", () => { q.select(); show(); });
+  q.addEventListener("input", () => { active = -1; show(); });
+  q.addEventListener("keydown", e => {
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); if (!items.length) return; active = (active + (e.key === "ArrowDown" ? 1 : -1) + items.length) % items.length; show(); }
+    else if (e.key === "Enter") { e.preventDefault(); const it = items[active >= 0 ? active : 0]; if (it) choose(it.brand); }
+    else if (e.key === "Escape") { close(); q.value = ui.brand; q.blur(); }
+  });
+  q.addEventListener("blur", () => setTimeout(() => { close(); q.value = ui.brand; }, 120));
+}
+
+function setupToggles() {
+  document.querySelectorAll("#area button").forEach(b => b.addEventListener("click", () => { ui.area = b.dataset.area; store.set("area", ui.area); render(); }));
+  document.querySelectorAll("#rankby button").forEach(b => b.addEventListener("click", () => { ui.rank = b.dataset.rank; store.set("rank", ui.rank); render(); }));
+}
+
+async function fetchFirst() {
+  let last;
+  for (const url of DATA_URLS) {
+    try {
+      const res = await fetch(url + (url.includes("?") ? "&" : "?") + "t=" + Date.now(), { cache: "no-store" });
+      if (res.ok) return await res.json();
+      last = new Error("HTTP " + res.status);
+    } catch (e) { last = e; }
+  }
+  throw last || new Error("no data source");
+}
+
+async function load(first) {
   try {
-    const res = await fetch("data/summary.json?t=" + Date.now(), { cache: "no-store" });
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    state.data = await res.json();
+    data = await fetchFirst();
+    indexBrands();
+    if (first) {
+      const params = new URLSearchParams(location.search);
+      const want = params.get("venue") || store.get("brand");
+      const byName = want && [...brands.keys()].find(b => b.toLowerCase() === want.toLowerCase());
+      ui.brand = byName || DEFAULT_BRAND;
+      ui.area = params.get("area") || store.get("area") || ui.area;
+      ui.rank = store.get("rank") || ui.rank;
+      if (!["5", "10", "city", "province"].includes(ui.area)) ui.area = "city";
+    }
+    if (!brands.has(ui.brand)) ui.brand = brands.has(DEFAULT_BRAND) ? DEFAULT_BRAND : brands.keys().next().value;
     document.getElementById("error").hidden = true;
     render();
   } catch (e) {
@@ -305,8 +500,10 @@ async function load() {
     el.hidden = false;
   }
 }
-load();
-setInterval(load, 5 * 60 * 1000);
+setupSearch();
+setupToggles();
+load(true);
+setInterval(() => load(false), 5 * 60 * 1000);
 </script>
 </body>
 </html>
