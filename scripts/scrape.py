@@ -133,7 +133,7 @@ def venue_location(slug):
 
 # Chains with several venues are ranked as one brand. Add a line per chain.
 BRAND_RULES = [
-    (r"^\s*air\s*padel\b", "Air Padel"),
+    (r"^\s*air\s*padel(\s+active)?\s*$", "Air Padel"),  # not "Air Padel Court Samarinda"
     (r"^\s*republic\s*(padel|premier)\b", "Republic Padel"),
     (r"^\s*metropolar\s*padel\b", "Metropolar Padel"),
     (r"^\s*padel\s*parc\b", "Padel Parc"),
