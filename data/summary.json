@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01T18:00:19+07:00",
+ "generated": "2026-10-01T18:40:36+07:00",
  "focus_brand": "Air Padel",
  "region": "Kota Jakarta Selatan",
  "source": "ayo.co.id",
@@ -105,7 +105,7 @@
      "slug": "metro-sport-center-melawai",
      "brand": "Metro Sport Center Melawai",
      "courts": 1,
-     "booked_hours": 3.0,
+     "booked_hours": 4.0,
      "slot_hours": 5.0
     },
     {
@@ -240,7 +240,7 @@
      "slug": "goat-arena-cibis",
      "brand": "GOAT Arena Cibis",
      "courts": 4,
-     "booked_hours": 6.0,
+     "booked_hours": 7.0,
      "slot_hours": 24.0
     },
     {
@@ -623,7 +623,7 @@
     }
    ],
    "first_run": "2026-10-01T17:56",
-   "last_run": "2026-10-01T18:00"
+   "last_run": "2026-10-01T18:40"
   },
   {
    "date": "2026-10-02",
@@ -753,7 +753,7 @@
      "slug": "padel-parc-mt-haryono-by-doogether",
      "brand": "Padel Parc",
      "courts": 3,
-     "booked_hours": 26.0,
+     "booked_hours": 27.0,
      "slot_hours": 54.0
     },
     {
@@ -870,7 +870,7 @@
      "slug": "victoria-social-club-kemang",
      "brand": "Victoria Social Club - Kemang",
      "courts": 4,
-     "booked_hours": 14.0,
+     "booked_hours": 22.0,
      "slot_hours": 68.0
     },
     {
@@ -1032,7 +1032,7 @@
      "slug": "club-de-padel",
      "brand": "Club De Padel",
      "courts": 1,
-     "booked_hours": 3.0,
+     "booked_hours": 4.0,
      "slot_hours": 16.0
     },
     {
@@ -1059,7 +1059,7 @@
      "slug": "padel-bros",
      "brand": "Padel Bros",
      "courts": 2,
-     "booked_hours": 6.0,
+     "booked_hours": 4.0,
      "slot_hours": 32.0
     },
     {
@@ -1226,7 +1226,7 @@
     }
    ],
    "first_run": "2026-10-01T17:56",
-   "last_run": "2026-10-01T18:00"
+   "last_run": "2026-10-01T18:40"
   },
   {
    "date": "2026-10-03",
@@ -1829,7 +1829,7 @@
     }
    ],
    "first_run": "2026-10-01T17:56",
-   "last_run": "2026-10-01T18:00"
+   "last_run": "2026-10-01T18:40"
   },
   {
    "date": "2026-10-04",
@@ -1959,7 +1959,7 @@
      "slug": "padel-parc-mt-haryono-by-doogether",
      "brand": "Padel Parc",
      "courts": 3,
-     "booked_hours": 12.0,
+     "booked_hours": 14.0,
      "slot_hours": 54.0
     },
     {
@@ -2292,7 +2292,7 @@
      "slug": "lifestyle-capital-club-lcc-padel-court-padeltennisgolf-simulator-cafe-working-space",
      "brand": "Lifestyle Capital Club (LCC): Padel Court, Padel/Tennis/Golf Simulator, Cafe & Working Space",
      "courts": 16,
-     "booked_hours": 14.0,
+     "booked_hours": 15.0,
      "slot_hours": 128.0
     },
     {
@@ -2432,7 +2432,7 @@
     }
    ],
    "first_run": "2026-10-01T17:56",
-   "last_run": "2026-10-01T18:00"
+   "last_run": "2026-10-01T18:40"
   }
  ]
 }
