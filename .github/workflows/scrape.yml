@@ -43,6 +43,9 @@ jobs:
       - name: Scrape ayo.co.id
         env:
           DATA_DIR: store
+          WORKERS: "12"
+          TIME_BUDGET_MIN: "40"
+          PYTHONUNBUFFERED: "1"
           MODE: ${{ github.event.inputs.mode != 'auto' && github.event.inputs.mode || '' }}
         run: python scripts/scrape.py
 

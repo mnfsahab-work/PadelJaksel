@@ -40,6 +40,9 @@ DAYS_BACK = 3         # summary covers the last 3 days too
 FULL_EVERY_MIN = 170  # a full run roughly every 3 hours
 KEEP_SLOT_DAYS = 10
 WORKERS = int(os.environ.get("WORKERS", "8"))
+# Stop issuing requests after this many minutes so a slow run still saves what it
+# collected (jobs are ordered today first) instead of hitting the CI timeout.
+DEADLINE = time.time() + 60 * float(os.environ.get("TIME_BUDGET_MIN", "40"))
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = Path(os.environ.get("DATA_DIR", ROOT / "data")).resolve()
@@ -223,6 +226,8 @@ def decode_field(f):
 
 def fetch_day(job):
     vid, d = job
+    if time.time() > DEADLINE:
+        return job, "skipped"
     try:
         body = get(f"{BASE}/venues-ajax/op-times-and-fields",
                    {"venue_id": vid, "date": d}, ajax=True)
@@ -241,8 +246,11 @@ def scrape(venues, dates, stamp):
         results = list(pool.map(fetch_day, jobs))
     docs = {d: load_json(SLOTS / f"{d}.json", None) or {"date": d, "first_run": stamp, "venues": {}}
             for d in dates}
-    errors = 0
+    errors = skipped = 0
     for (vid, d), res in results:
+        if res == "skipped":
+            skipped += 1
+            continue
         if res is None:
             errors += 1
             continue
@@ -259,8 +267,9 @@ def scrape(venues, dates, stamp):
         doc["last_run"] = stamp
         write_json(SLOTS / f"{d}.json", doc)
         write_daily(doc)
-    print(f"scraped {len(jobs) - errors}/{len(jobs)} venue-days in {time.time() - t0:.0f}s")
-    return errors, len(jobs)
+    print(f"scraped {len(jobs) - errors - skipped}/{len(jobs)} venue-days in {time.time() - t0:.0f}s"
+          f" ({errors} failed, {skipped} skipped for time)", flush=True)
+    return errors, len(jobs) - skipped
 
 
 def write_daily(doc):
@@ -348,7 +357,7 @@ def main():
     write_json(DATA / "state.json", state, pretty=True)
     prune(today)
     build_summary(now, venues)
-    if errors > total / 2:
+    if total and errors > total / 2:
         sys.exit("more than half of the requests failed")
 
 
