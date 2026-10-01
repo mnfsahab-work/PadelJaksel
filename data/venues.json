@@ -1,0 +1,589 @@
+{
+ "updated": "2026-10-01T18:00",
+ "venues": {
+  "1006": {
+   "id": 1006,
+   "slug": "wins-arena-kuningan",
+   "name": "Wins Arena - Kuningan",
+   "brand": "Wins Arena - Kuningan",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "903": {
+   "id": 903,
+   "slug": "futton-padel-club",
+   "name": "Futton Padel Club",
+   "brand": "Futton Padel Club",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1476": {
+   "id": 1476,
+   "slug": "air-padel",
+   "name": "AIR Padel",
+   "brand": "Air Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "4482": {
+   "id": 4482,
+   "slug": "mpadl",
+   "name": "Mpadl",
+   "brand": "Mpadl",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1649": {
+   "id": 1649,
+   "slug": "naya-padel",
+   "name": "Naya Padel",
+   "brand": "Naya Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1416": {
+   "id": 1416,
+   "slug": "dreamcourt-grafika-sport-arena-padel",
+   "name": "Dreamcourt Grafika Sport Arena Padel",
+   "brand": "Dreamcourt Grafika Sport Arena Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1860": {
+   "id": 1860,
+   "slug": "the-field",
+   "name": "The Field",
+   "brand": "The Field",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3216": {
+   "id": 3216,
+   "slug": "air-padel-active",
+   "name": "AIR Padel Active",
+   "brand": "Air Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1259": {
+   "id": 1259,
+   "slug": "metro-sport-center-melawai",
+   "name": "Metro Sport Center Melawai",
+   "brand": "Metro Sport Center Melawai",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3556": {
+   "id": 3556,
+   "slug": "trilogi-arena-by-duale",
+   "name": "Trilogi Arena By Duale",
+   "brand": "Trilogi Arena By Duale",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "4157": {
+   "id": 4157,
+   "slug": "grand-sports-padel",
+   "name": "Grand Sports Padel",
+   "brand": "Grand Sports Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1711": {
+   "id": 1711,
+   "slug": "orion-padel-court",
+   "name": "Orion Padel Court",
+   "brand": "Orion Padel Court",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2848": {
+   "id": 2848,
+   "slug": "space-padel-itc-fatmawati",
+   "name": "Space Padel ITC Fatmawati",
+   "brand": "Space Padel ITC Fatmawati",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3490": {
+   "id": 3490,
+   "slug": "padel-parc-mt-haryono-by-doogether",
+   "name": "Padel Parc MT Haryono By DOOgether",
+   "brand": "Padel Parc",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3942": {
+   "id": 3942,
+   "slug": "dome-padel-tebet",
+   "name": "Dome Padel, Tebet",
+   "brand": "Dome Padel, Tebet",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "4415": {
+   "id": 4415,
+   "slug": "fork-padel",
+   "name": "Fork Padel",
+   "brand": "Fork Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2618": {
+   "id": 2618,
+   "slug": "racket-kuningan",
+   "name": "Racket Kuningan",
+   "brand": "Racket Kuningan",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1734": {
+   "id": 1734,
+   "slug": "corner-sport-padel-pondok-pinang",
+   "name": "Corner Sport Padel Pondok Pinang",
+   "brand": "Corner Sport Padel Pondok Pinang",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1857": {
+   "id": 1857,
+   "slug": "padl-out",
+   "name": "Padl Out",
+   "brand": "Padl Out",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2165": {
+   "id": 2165,
+   "slug": "hq-padel-tennis",
+   "name": "HQ Padel & Tennis",
+   "brand": "HQ Padel & Tennis",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1681": {
+   "id": 1681,
+   "slug": "republic-padel-simprug",
+   "name": "Republic Padel Simprug",
+   "brand": "Republic Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3729": {
+   "id": 3729,
+   "slug": "padel-un-terra-simulator",
+   "name": "Padel Un Terra Simulator",
+   "brand": "Padel Un Terra Simulator",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3918": {
+   "id": 3918,
+   "slug": "oasis-padel-kuningan",
+   "name": "Oasis Padel Kuningan",
+   "brand": "Oasis Padel Kuningan",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1070": {
+   "id": 1070,
+   "slug": "foreground-racquet-simulator-kemang",
+   "name": "Foreground Racquet Simulator - Kemang",
+   "brand": "Foreground Racquet Simulator - Kemang",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1250": {
+   "id": 1250,
+   "slug": "wonderball-padel-setiabudi",
+   "name": "Wonderball Padel Setiabudi",
+   "brand": "Wonderball Padel Setiabudi",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3255": {
+   "id": 3255,
+   "slug": "goat-arena-cibis",
+   "name": "GOAT Arena Cibis",
+   "brand": "GOAT Arena Cibis",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "4628": {
+   "id": 4628,
+   "slug": "ppplatz",
+   "name": "PPPLATZ",
+   "brand": "PPPLATZ",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3211": {
+   "id": 3211,
+   "slug": "desimal-padel",
+   "name": "Desimal Padel",
+   "brand": "Desimal Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2859": {
+   "id": 2859,
+   "slug": "victoria-social-club-kemang",
+   "name": "Victoria Social Club - Kemang",
+   "brand": "Victoria Social Club - Kemang",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1704": {
+   "id": 1704,
+   "slug": "mr-padel-cipete",
+   "name": "Mr Padel Cipete",
+   "brand": "Mr Padel Cipete",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3781": {
+   "id": 3781,
+   "slug": "padel-venue",
+   "name": "Padel Venue",
+   "brand": "Padel Venue",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1203": {
+   "id": 1203,
+   "slug": "sport-one",
+   "name": "Sport One",
+   "brand": "Sport One",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1279": {
+   "id": 1279,
+   "slug": "play-court-at-vasaka-solterra-pejaten",
+   "name": "PLAY! Court At Vasaka Solterra - Pejaten",
+   "brand": "PLAY! Court At Vasaka Solterra - Pejaten",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2127": {
+   "id": 2127,
+   "slug": "artepola",
+   "name": "Artepola",
+   "brand": "Artepola",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2418": {
+   "id": 2418,
+   "slug": "padel-mezcal",
+   "name": "Padel Mezcal",
+   "brand": "Padel Mezcal",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2845": {
+   "id": 2845,
+   "slug": "the-rooftop-kyzn-kuningan",
+   "name": "The Rooftop Kyzn Kuningan",
+   "brand": "The Rooftop Kyzn Kuningan",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3040": {
+   "id": 3040,
+   "slug": "mms-arena",
+   "name": "MMS ARENA",
+   "brand": "MMS ARENA",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3201": {
+   "id": 3201,
+   "slug": "binakarsa-green-courts",
+   "name": "Binakarsa Green Courts",
+   "brand": "Binakarsa Green Courts",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2328": {
+   "id": 2328,
+   "slug": "the-court-cirendeu",
+   "name": "The Court Cirendeu",
+   "brand": "The Court Cirendeu",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1710": {
+   "id": 1710,
+   "slug": "bumi-padel-kemang",
+   "name": "Bumi Padel Kemang",
+   "brand": "Bumi Padel Kemang",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2168": {
+   "id": 2168,
+   "slug": "the-estate-padel-club-kemang",
+   "name": "The Estate Padel Club - Kemang",
+   "brand": "The Estate Padel Club - Kemang",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2533": {
+   "id": 2533,
+   "slug": "padelplay",
+   "name": "Padelplay",
+   "brand": "Padelplay",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1167": {
+   "id": 1167,
+   "slug": "republic-padel-tb-simatupang",
+   "name": "Republic Padel TB Simatupang",
+   "brand": "Republic Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2204": {
+   "id": 2204,
+   "slug": "ribens-padel-fatmawati",
+   "name": "Ribens Padel Fatmawati",
+   "brand": "Ribens Padel Fatmawati",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2097": {
+   "id": 2097,
+   "slug": "gilapadel-kebayoran-lama",
+   "name": "Gilapadel Kebayoran Lama",
+   "brand": "Gilapadel Kebayoran Lama",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "4180": {
+   "id": 4180,
+   "slug": "padel-parc-arkadia",
+   "name": "Padel Parc Arkadia",
+   "brand": "Padel Parc",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1827": {
+   "id": 1827,
+   "slug": "club-de-padel",
+   "name": "Club De Padel",
+   "brand": "Club De Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1848": {
+   "id": 1848,
+   "slug": "look-padel-kahfi-i-jaksel",
+   "name": "Look Padel Kahfi I Jaksel",
+   "brand": "Look Padel Kahfi I Jaksel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2555": {
+   "id": 2555,
+   "slug": "la-corte-de-padel",
+   "name": "La Corte De Padel",
+   "brand": "La Corte De Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2329": {
+   "id": 2329,
+   "slug": "padel-bros",
+   "name": "Padel Bros",
+   "brand": "Padel Bros",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1190": {
+   "id": 1190,
+   "slug": "sunrise-padel-permata-hijau",
+   "name": "Sunrise Padel - Permata Hijau",
+   "brand": "Sunrise Padel - Permata Hijau",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1640": {
+   "id": 1640,
+   "slug": "bounce-padel",
+   "name": "Bounce Padel",
+   "brand": "Bounce Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3563": {
+   "id": 3563,
+   "slug": "lifestyle-capital-club-lcc-padel-court-padeltennisgolf-simulator-cafe-working-space",
+   "name": "Lifestyle Capital Club (LCC): Padel Court, Padel/Tennis/Golf Simulator, Cafe & Working Space",
+   "brand": "Lifestyle Capital Club (LCC): Padel Court, Padel/Tennis/Golf Simulator, Cafe & Working Space",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1513": {
+   "id": 1513,
+   "slug": "911-court-syndicatejkt",
+   "name": "911 Court Syndicate.jkt",
+   "brand": "911 Court Syndicate.jkt",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2486": {
+   "id": 2486,
+   "slug": "k30-padel",
+   "name": "K30 Padel",
+   "brand": "K30 Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3520": {
+   "id": 3520,
+   "slug": "clubhouse-gandaria",
+   "name": "Clubhouse Gandaria",
+   "brand": "Clubhouse Gandaria",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3075": {
+   "id": 3075,
+   "slug": "bm-padel-jagakarsa",
+   "name": "BM Padel Jagakarsa",
+   "brand": "BM Padel Jagakarsa",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3128": {
+   "id": 3128,
+   "slug": "fourthwall",
+   "name": "Fourthwall",
+   "brand": "Fourthwall",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3967": {
+   "id": 3967,
+   "slug": "jungle-padel-jakarta",
+   "name": "Jungle Padel Jakarta",
+   "brand": "Jungle Padel Jakarta",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2980": {
+   "id": 2980,
+   "slug": "toms-padel-by-sira",
+   "name": "TOM'S PADEL By Sira",
+   "brand": "TOM'S PADEL By Sira",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3524": {
+   "id": 3524,
+   "slug": "all-play-kemang-padel-pickle",
+   "name": "All Play Kemang | Padel & Pickle",
+   "brand": "All Play Kemang | Padel & Pickle",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "1879": {
+   "id": 1879,
+   "slug": "padel-station-by-vsports",
+   "name": "Padel Station By Vsports",
+   "brand": "Padel Station By Vsports",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3102": {
+   "id": 3102,
+   "slug": "serve-and-rally-reserve",
+   "name": "Serve And Rally Reserve",
+   "brand": "Serve And Rally Reserve",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3824": {
+   "id": 3824,
+   "slug": "4-play-padel-simulator",
+   "name": "4-Play Padel Simulator",
+   "brand": "4-Play Padel Simulator",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2798": {
+   "id": 2798,
+   "slug": "second-serve-padel",
+   "name": "Second Serve Padel",
+   "brand": "Second Serve Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "4456": {
+   "id": 4456,
+   "slug": "t3-sports-lifestyle",
+   "name": "T3 Sports & Lifestyle",
+   "brand": "T3 Sports & Lifestyle",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3849": {
+   "id": 3849,
+   "slug": "round-padel",
+   "name": "Round Padel",
+   "brand": "Round Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2886": {
+   "id": 2886,
+   "slug": "metropolar-padel-bripens-gatsu",
+   "name": "Metropolar Padel Bripens Gatsu",
+   "brand": "Metropolar Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "2887": {
+   "id": 2887,
+   "slug": "metropolar-padel-warung-buncit",
+   "name": "Metropolar Padel Warung Buncit",
+   "brand": "Metropolar Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "3307": {
+   "id": 3307,
+   "slug": "padel-teduh",
+   "name": "Padel Teduh",
+   "brand": "Padel Teduh",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "4106": {
+   "id": 4106,
+   "slug": "padel-house-54",
+   "name": "Padel House 54",
+   "brand": "Padel House 54",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "4770": {
+   "id": 4770,
+   "slug": "republic-premier",
+   "name": "Republic Premier",
+   "brand": "Republic Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  },
+  "5014": {
+   "id": 5014,
+   "slug": "margot-padel",
+   "name": "Margot Padel",
+   "brand": "Margot Padel",
+   "first_seen": "2026-10-01T17:56",
+   "last_listed": "2026-10-01T18:00"
+  }
+ }
+}

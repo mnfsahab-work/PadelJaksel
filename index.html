@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Air Padel Share Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a court-sheet. Headline share on top, a 7-day strip (past | today | upcoming),
+   then one card per day with its top 3, then the full table for the chosen day. */
+:root {
+  --bg: #f5f7f8;
+  --surface: #ffffff;
+  --ink: #14222b;
+  --ink-2: #4a5a64;
+  --ink-3: #7d8b93;
+  --line: #dde3e6;
+  --air: #0a7cc2;        /* Air Padel: open-sky blue, the only accent */
+  --air-soft: #e3f1fa;
+  --other: #9aa8b0;      /* every other brand */
+  --track: #ebeff1;
+  --good: #1d7a4a; --good-bg: #e2f3e9;
+  --warn: #8a5a00; --warn-bg: #fbf0d9;
+  --muted-bg: #eef1f3;
+  --f-display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", Roboto, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e171d; --surface: #15222a; --ink: #e6edf1; --ink-2: #a9b8c1; --ink-3: #7c8d97;
+  --line: #26363f; --air: #4cb3f0; --air-soft: #15324a; --other: #61737e; --track: #1f2e37;
+  --good: #6fd19c; --good-bg: #15342a; --warn: #f0c060; --warn-bg: #3a2e14; --muted-bg: #1c2a32;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #0e171d; --surface: #15222a; --ink: #e6edf1; --ink-2: #a9b8c1; --ink-3: #7c8d97;
+  --line: #26363f; --air: #4cb3f0; --air-soft: #15324a; --other: #61737e; --track: #1f2e37;
+  --good: #6fd19c; --good-bg: #15342a; --warn: #f0c060; --warn-bg: #3a2e14; --muted-bg: #1c2a32;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 56px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
+.wrap > * { min-width: 0; }
+h1, h2, h3 { font-family: var(--f-display); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h1 { font-size: clamp(26px, 4vw, 38px); font-weight: 700; line-height: 1.1; }
+h2 { font-size: 20px; font-weight: 600; }
+.eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); font-weight: 600; }
+.num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.muted { color: var(--ink-3); }
+header { display: grid; gap: 10px; }
+header p { margin: 0; color: var(--ink-2); max-width: 68ch; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--ink-3); }
+.meta b { color: var(--ink-2); font-weight: 500; }
+
+/* Headline row */
+.hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: grid; gap: 4px; min-width: 0; }
+.tile .big { font-family: var(--f-display); font-size: 40px; font-weight: 700; line-height: 1; color: var(--air); font-variant-numeric: tabular-nums; }
+.tile .big.ink { color: var(--ink); }
+.tile .sub { font-size: 13px; color: var(--ink-2); }
+
+/* 7-day share chart */
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: grid; gap: 14px; min-width: 0; }
+.panel-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; }
+.legend { display: flex; gap: 14px; font-size: 13px; color: var(--ink-2); flex-wrap: wrap; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.chart-scroll { overflow-x: auto; }
+svg text { fill: var(--ink-2); font-family: var(--f-body); font-size: 12px; }
+svg .val { fill: var(--ink); font-family: var(--f-mono); font-size: 12px; font-weight: 500; }
+svg .grid { stroke: var(--line); stroke-width: 1; }
+svg .bar { fill: var(--air); }
+svg .bar-hit { fill: transparent; cursor: pointer; }
+svg .col-today { fill: var(--air-soft); }
+svg .pending { fill: var(--track); }
+.tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--bg); padding: 8px 10px; border-radius: 6px; font-size: 12px; line-height: 1.45; z-index: 5; max-width: 260px; }
+
+/* Day cards */
+.days { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.day { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 10px; align-content: start; text-align: left; font: inherit; color: inherit; cursor: pointer; min-width: 0; }
+.day:hover { border-color: var(--ink-3); }
+.day:focus-visible, button:focus-visible { outline: 2px solid var(--air); outline-offset: 2px; }
+.day[aria-pressed="true"] { border-color: var(--air); box-shadow: 0 0 0 1px var(--air) inset; }
+.day-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.day-date { font-family: var(--f-display); font-weight: 600; font-size: 17px; }
+.chip { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; white-space: nowrap; }
+.chip.final { background: var(--good-bg); color: var(--good); }
+.chip.live { background: var(--air-soft); color: var(--air); }
+.chip.ahead { background: var(--muted-bg); color: var(--ink-2); }
+.chip.partial { background: var(--warn-bg); color: var(--warn); }
+.chip.none { background: var(--muted-bg); color: var(--ink-3); }
+.air-line { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 13px; color: var(--ink-2); }
+.air-line .num { font-size: 22px; color: var(--air); font-weight: 500; }
+.rank { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.rank li { display: grid; grid-template-columns: 18px 1fr auto; gap: 2px 8px; align-items: center; font-size: 13px; }
+.rank .pos { font-family: var(--f-mono); color: var(--ink-3); }
+.rank .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.rank .pct { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.rank .meter { grid-column: 2 / 4; height: 6px; background: var(--track); border-radius: 3px; overflow: hidden; }
+.rank .meter span { display: block; height: 100%; background: var(--other); border-radius: 3px; }
+.rank li.is-air .name, .rank li.is-air .pct { color: var(--air); font-weight: 600; }
+.rank li.is-air .meter span { background: var(--air); }
+.rank li.sep { border-top: 1px dashed var(--line); padding-top: 8px; }
+.empty { font-size: 13px; color: var(--ink-3); padding: 6px 0; }
+
+/* Table */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+th:nth-child(2), td:nth-child(2) { text-align: left; white-space: normal; min-width: 180px; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); font-weight: 600; }
+td { font-variant-numeric: tabular-nums; }
+tr.is-air td { color: var(--air); font-weight: 600; background: var(--air-soft); }
+td .venues { display: block; font-size: 12px; color: var(--ink-3); font-weight: 400; }
+.notes { font-size: 13px; color: var(--ink-2); display: grid; gap: 6px; max-width: 80ch; }
+.notes ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.error { background: var(--warn-bg); color: var(--warn); padding: 12px 14px; border-radius: 8px; }
+@media (max-width: 520px) { .wrap { padding-inline: 16px; } .tile .big { font-size: 34px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Padel courts · Kota Jakarta Selatan · source: ayo.co.id</div>
+    <h1>How much of South Jakarta's padel play does Air Padel book?</h1>
+    <p>Market share by court-hours booked on AYO: Air Padel against every other padel venue in Jakarta Selatan, for the last 3 days, today and the next 3 days, with the top 3 brands for each day.</p>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <div id="error" class="error" hidden></div>
+
+  <section class="hero" id="hero" aria-label="Headline numbers"></section>
+
+  <section class="panel" aria-labelledby="chart-title">
+    <div class="panel-head">
+      <h2 id="chart-title">Air Padel share of booked court-hours, by day</h2>
+      <div class="legend"><span><i style="background:var(--air)"></i>Air Padel share</span><span><i style="background:var(--track)"></i>No data yet</span></div>
+    </div>
+    <div class="chart-scroll"><svg id="chart" role="img" aria-label="Air Padel daily market share"></svg></div>
+  </section>
+
+  <section aria-labelledby="days-title" style="display:grid;gap:12px">
+    <div class="panel-head"><h2 id="days-title">Top 3 brands each day</h2><span class="muted" style="font-size:13px">Pick a day to see every venue below.</span></div>
+    <div class="days" id="days"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="table-title">
+    <div class="panel-head"><h2 id="table-title">Full ranking</h2><span class="muted" id="table-sub" style="font-size:13px"></span></div>
+    <div class="table-wrap"><table id="table"></table></div>
+  </section>
+
+  <section class="notes" aria-labelledby="notes-title">
+    <h2 id="notes-title" style="font-size:16px">How the numbers are made</h2>
+    <ul>
+      <li><b>Court-hour booked</b> = an AYO slot marked unavailable. Hours blocked by the venue itself (coaching, maintenance, members) look the same on AYO and are counted too.</li>
+      <li><b>Market</b> = all padel venues AYO lists in Kota Jakarta Selatan. Padel simulators are excluded. Venues that take bookings outside AYO only show their AYO calendar.</li>
+      <li><b>Brands</b>: chains are ranked as one brand. Air Padel = AIR Padel + AIR Padel Active. Republic Padel, Metropolar Padel and Padel Parc are grouped the same way.</li>
+      <li><b>Past days</b>: AYO hides slots once they start, so a job saves every slot's last seen state every 30 minutes. Days before tracking began have no data; the first tracked day is partial.</li>
+      <li><b>Upcoming days</b> show bookings made so far and will grow until the day is played.</li>
+    </ul>
+  </section>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const AIR = "Air Padel";
+const fmtPct = x => (x * 100).toFixed(1) + "%";
+const fmtH = x => (Math.round(x * 10) / 10).toLocaleString("en-US");
+const dayName = (iso, opts) => new Date(iso + "T00:00:00").toLocaleDateString("en-GB", opts);
+let state = { data: null, selected: null };
+
+function brandsFor(day) {
+  const m = new Map();
+  for (const v of day.venues) {
+    const b = m.get(v.brand) || { brand: v.brand, booked: 0, capacity: 0, courts: 0, venues: [] };
+    b.booked += v.booked_hours; b.capacity += v.slot_hours; b.courts += v.courts; b.venues.push(v.name);
+    m.set(v.brand, b);
+  }
+  const total = [...m.values()].reduce((s, b) => s + b.booked, 0);
+  const list = [...m.values()].map(b => ({ ...b, share: total ? b.booked / total : 0 }))
+    .sort((a, b) => b.booked - a.booked || a.brand.localeCompare(b.brand));
+  list.forEach((b, i) => b.rank = i + 1);
+  return { total, list, air: list.find(b => b.brand === AIR) };
+}
+
+function status(day, generated) {
+  if (!day.tracked || !day.venues.length) return { cls: "none", label: "Not tracked" };
+  const firstRunDay = (day.first_run || "").slice(0, 10);
+  if (day.offset < 0) return firstRunDay === day.date ? { cls: "partial", label: "Partial" } : { cls: "final", label: "Final" };
+  if (day.offset === 0) return firstRunDay === day.date ? { cls: "partial", label: "Today · partial" } : { cls: "live", label: "Today · live" };
+  return { cls: "ahead", label: "Booked so far" };
+}
+
+function render() {
+  const d = state.data;
+  const days = d.days.map(day => ({ ...day, agg: brandsFor(day), st: status(day, d.generated) }));
+  const gen = new Date(d.generated);
+  document.getElementById("meta").innerHTML =
+    `<span>Last updated <b>${gen.toLocaleString("en-GB", { timeZone: "Asia/Jakarta", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} WIB</b></span>` +
+    `<span>Venues tracked <b>${new Set(days.flatMap(x => x.venues.map(v => v.id))).size}</b></span>` +
+    `<span>Refreshes every 30 min</span>`;
+
+  // Headline tiles: today, last 3 days (tracked only), next 3 days.
+  const sumWin = sel => {
+    const ds = days.filter(sel).filter(x => x.agg.total > 0);
+    const tot = ds.reduce((s, x) => s + x.agg.total, 0), air = ds.reduce((s, x) => s + (x.agg.air?.booked || 0), 0);
+    return { n: ds.length, share: tot ? air / tot : null, air, tot };
+  };
+  const past = sumWin(x => x.offset < 0), today = sumWin(x => x.offset === 0), next = sumWin(x => x.offset > 0);
+  const todayDay = days.find(x => x.offset === 0);
+  const tile = (label, w, note) => `<div class="tile"><div class="eyebrow">${label}</div>
+    <div class="big">${w.share == null ? "–" : fmtPct(w.share)}</div>
+    <div class="sub">${w.share == null ? note : `<span class="num">${fmtH(w.air)}</span> of <span class="num">${fmtH(w.tot)}</span> court-hours`}</div></div>`;
+  document.getElementById("hero").innerHTML =
+    tile("Last 3 days", past, "Collecting. Each past day fills in as tracking runs.") +
+    tile("Today", today, "No slots yet") +
+    tile("Next 3 days", next, "No bookings yet") +
+    `<div class="tile"><div class="eyebrow">Air Padel rank today</div><div class="big ink">${todayDay?.agg.air ? "#" + todayDay.agg.air.rank : "–"}</div>
+     <div class="sub">of ${todayDay?.agg.list.length || 0} brands · leader: ${todayDay?.agg.list[0]?.brand || "–"}</div></div>`;
+
+  drawChart(days);
+
+  if (!state.selected || !days.some(x => x.date === state.selected && x.agg.total))
+    state.selected = (days.find(x => x.offset === 0 && x.agg.total) || days.find(x => x.agg.total) || days[3]).date;
+
+  document.getElementById("days").innerHTML = days.map(day => {
+    const { agg, st } = day;
+    const top = agg.list.slice(0, 3);
+    const maxShare = agg.list[0]?.share || 1;
+    const row = (b, extra = "") => `<li class="${b.brand === AIR ? "is-air" : ""} ${extra}"><span class="pos">${b.rank}</span>
+      <span class="name" title="${b.venues.join(", ")}">${b.brand}</span><span class="pct">${fmtPct(b.share)}</span>
+      <span class="meter"><span style="width:${(b.share / maxShare * 100).toFixed(1)}%"></span></span></li>`;
+    let body;
+    if (!agg.total) body = `<div class="empty">${day.offset < 0 ? "Before tracking started. No saved snapshot for this day." : "No booked hours recorded yet."}</div>`;
+    else body = `<div class="air-line"><span>Air Padel share</span><span class="num">${agg.air ? fmtPct(agg.air.share) : "0.0%"}</span></div>
+      <ol class="rank">${top.map(b => row(b)).join("")}${agg.air && agg.air.rank > 3 ? row(agg.air, "sep") : ""}</ol>`;
+    return `<button class="day" type="button" data-date="${day.date}" aria-pressed="${day.date === state.selected}" ${agg.total ? "" : "disabled"}>
+      <div class="day-head"><span class="day-date">${dayName(day.date, { weekday: "short", day: "numeric", month: "short" })}</span><span class="chip ${st.cls}">${st.label}</span></div>
+      ${body}</button>`;
+  }).join("");
+  document.querySelectorAll(".day").forEach(b => b.addEventListener("click", () => { state.selected = b.dataset.date; render(); }));
+
+  const sel = days.find(x => x.date === state.selected);
+  document.getElementById("table-sub").textContent = sel ? `${dayName(sel.date, { weekday: "long", day: "numeric", month: "long" })} · ${sel.st.label} · ${fmtH(sel.agg.total)} court-hours booked` : "";
+  document.getElementById("table").innerHTML = `<thead><tr><th>#</th><th>Brand</th><th>Courts</th><th>Booked h</th><th>Open slots h</th><th>Utilisation</th><th>Share</th></tr></thead><tbody>` +
+    (sel ? sel.agg.list.map(b => `<tr class="${b.brand === AIR ? "is-air" : ""}"><td>${b.rank}</td><td>${b.brand}${b.venues.length > 1 || b.venues[0] !== b.brand ? `<span class="venues">${b.venues.join(" · ")}</span>` : ""}</td>
+      <td>${b.courts}</td><td>${fmtH(b.booked)}</td><td>${fmtH(b.capacity)}</td><td>${b.capacity ? fmtPct(b.booked / b.capacity) : "–"}</td><td>${fmtPct(b.share)}</td></tr>`).join("") : "") + `</tbody>`;
+}
+
+function drawChart(days) {
+  const svg = document.getElementById("chart");
+  const W = 760, H = 240, padL = 44, padR = 12, padT = 22, padB = 46;
+  const vals = days.map(x => x.agg.total ? (x.agg.air?.share || 0) : null);
+  const maxV = Math.max(0.05, ...vals.filter(v => v != null));
+  const step = maxV > 0.2 ? 0.1 : maxV > 0.1 ? 0.05 : 0.02;
+  const top = Math.ceil(maxV / step) * step;
+  const y = v => padT + (H - padT - padB) * (1 - v / top);
+  const cw = (W - padL - padR) / days.length, bw = Math.min(56, cw * 0.5);
+  let s = "";
+  const todayIdx = days.findIndex(x => x.offset === 0);
+  if (todayIdx >= 0) s += `<rect class="col-today" x="${padL + cw * todayIdx + 2}" y="${padT - 14}" width="${cw - 4}" height="${H - padT - padB + 14}" rx="6"/>`;
+  for (let t = 0; t <= top + 1e-9; t += step) s += `<line class="grid" x1="${padL}" x2="${W - padR}" y1="${y(t)}" y2="${y(t)}"/><text x="${padL - 8}" y="${y(t) + 4}" text-anchor="end">${Math.round(t * 100)}%</text>`;
+  days.forEach((day, i) => {
+    const cx = padL + cw * i + cw / 2, v = vals[i];
+    if (v == null) s += `<rect class="pending" x="${cx - bw / 2}" y="${y(top) }" width="${bw}" height="${y(0) - y(top)}" rx="4"/><text x="${cx}" y="${y(top / 2)}" text-anchor="middle" class="muted">no data</text>`;
+    else {
+      const h = Math.max(0, y(0) - y(v));
+      s += `<path class="bar" d="M${cx - bw / 2},${y(0)} v${-(h - 4 > 0 ? h - 4 : 0)} q0,-4 4,-4 h${bw - 8} q4,0 4,4 v${h - 4 > 0 ? h - 4 : 0} z"/>`;
+      s += `<text class="val" x="${cx}" y="${y(v) - 6}" text-anchor="middle">${fmtPct(v)}</text>`;
+    }
+    s += `<text x="${cx}" y="${H - padB + 18}" text-anchor="middle">${dayName(day.date, { weekday: "short", day: "numeric" })}</text>`;
+    s += `<text x="${cx}" y="${H - padB + 34}" text-anchor="middle" style="font-size:11px">${day.offset === 0 ? "today" : (day.offset > 0 ? "+" : "") + day.offset + "d"}</text>`;
+    s += `<rect class="bar-hit" data-i="${i}" x="${padL + cw * i}" y="${padT}" width="${cw}" height="${H - padT - padB}"/>`;
+  });
+  s += `<line x1="${padL}" x2="${W - padR}" y1="${y(0)}" y2="${y(0)}" stroke="var(--ink-3)" stroke-width="1"/>`;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.style.width = "100%"; svg.style.minWidth = "520px"; svg.style.height = "auto";
+  svg.innerHTML = s;
+  const tip = document.getElementById("tip");
+  svg.querySelectorAll(".bar-hit").forEach(r => {
+    r.addEventListener("mousemove", e => {
+      const day = days[+r.dataset.i], a = day.agg;
+      tip.innerHTML = `<b>${dayName(day.date, { weekday: "long", day: "numeric", month: "short" })}</b> · ${day.st.label}<br>` +
+        (a.total ? `Air Padel: ${fmtH(a.air?.booked || 0)} h (${fmtPct(a.air?.share || 0)}), rank #${a.air?.rank || "–"}<br>All venues: ${fmtH(a.total)} h booked` : "No saved data for this day");
+      tip.hidden = false;
+      tip.style.left = Math.min(e.clientX + 14, innerWidth - 270) + "px"; tip.style.top = e.clientY + 14 + "px";
+    });
+    r.addEventListener("mouseleave", () => tip.hidden = true);
+    r.addEventListener("click", () => { const day = days[+r.dataset.i]; if (day.agg.total) { state.selected = day.date; render(); } });
+  });
+}
+
+async function load() {
+  try {
+    const res = await fetch("data/summary.json?t=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    state.data = await res.json();
+    document.getElementById("error").hidden = true;
+    render();
+  } catch (e) {
+    const el = document.getElementById("error");
+    el.textContent = "Could not load the latest data (" + e.message + "). The page retries every 5 minutes.";
+    el.hidden = false;
+  }
+}
+load();
+setInterval(load, 5 * 60 * 1000);
+</script>
+</body>
+</html>

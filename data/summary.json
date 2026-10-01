@@ -1,0 +1,2438 @@
+{
+ "generated": "2026-10-01T18:00:19+07:00",
+ "focus_brand": "Air Padel",
+ "region": "Kota Jakarta Selatan",
+ "source": "ayo.co.id",
+ "days": [
+  {
+   "date": "2026-09-28",
+   "offset": -3,
+   "tracked": false,
+   "venues": []
+  },
+  {
+   "date": "2026-09-29",
+   "offset": -2,
+   "tracked": false,
+   "venues": []
+  },
+  {
+   "date": "2026-09-30",
+   "offset": -1,
+   "tracked": false,
+   "venues": []
+  },
+  {
+   "date": "2026-10-01",
+   "offset": 0,
+   "tracked": true,
+   "venues": [
+    {
+     "id": 1006,
+     "name": "Wins Arena - Kuningan",
+     "slug": "wins-arena-kuningan",
+     "brand": "Wins Arena - Kuningan",
+     "courts": 2,
+     "booked_hours": 8.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 903,
+     "name": "Futton Padel Club",
+     "slug": "futton-padel-club",
+     "brand": "Futton Padel Club",
+     "courts": 2,
+     "booked_hours": 6.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 1476,
+     "name": "AIR Padel",
+     "slug": "air-padel",
+     "brand": "Air Padel",
+     "courts": 3,
+     "booked_hours": 8.0,
+     "slot_hours": 18.0
+    },
+    {
+     "id": 4482,
+     "name": "Mpadl",
+     "slug": "mpadl",
+     "brand": "Mpadl",
+     "courts": 2,
+     "booked_hours": 4.0,
+     "slot_hours": 10.0
+    },
+    {
+     "id": 1649,
+     "name": "Naya Padel",
+     "slug": "naya-padel",
+     "brand": "Naya Padel",
+     "courts": 6,
+     "booked_hours": 8.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 1416,
+     "name": "Dreamcourt Grafika Sport Arena Padel",
+     "slug": "dreamcourt-grafika-sport-arena-padel",
+     "brand": "Dreamcourt Grafika Sport Arena Padel",
+     "courts": 1,
+     "booked_hours": 2.0,
+     "slot_hours": 3.0
+    },
+    {
+     "id": 1860,
+     "name": "The Field",
+     "slug": "the-field",
+     "brand": "The Field",
+     "courts": 2,
+     "booked_hours": 4.0,
+     "slot_hours": 8.0
+    },
+    {
+     "id": 3216,
+     "name": "AIR Padel Active",
+     "slug": "air-padel-active",
+     "brand": "Air Padel",
+     "courts": 6,
+     "booked_hours": 6.0,
+     "slot_hours": 18.0
+    },
+    {
+     "id": 1259,
+     "name": "Metro Sport Center Melawai",
+     "slug": "metro-sport-center-melawai",
+     "brand": "Metro Sport Center Melawai",
+     "courts": 1,
+     "booked_hours": 3.0,
+     "slot_hours": 5.0
+    },
+    {
+     "id": 3556,
+     "name": "Trilogi Arena By Duale",
+     "slug": "trilogi-arena-by-duale",
+     "brand": "Trilogi Arena By Duale",
+     "courts": 3,
+     "booked_hours": 9.0,
+     "slot_hours": 15.0
+    },
+    {
+     "id": 4157,
+     "name": "Grand Sports Padel",
+     "slug": "grand-sports-padel",
+     "brand": "Grand Sports Padel",
+     "courts": 5,
+     "booked_hours": 16.0,
+     "slot_hours": 30.0
+    },
+    {
+     "id": 1711,
+     "name": "Orion Padel Court",
+     "slug": "orion-padel-court",
+     "brand": "Orion Padel Court",
+     "courts": 3,
+     "booked_hours": 6.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 2848,
+     "name": "Space Padel ITC Fatmawati",
+     "slug": "space-padel-itc-fatmawati",
+     "brand": "Space Padel ITC Fatmawati",
+     "courts": 5,
+     "booked_hours": 7.0,
+     "slot_hours": 18.0
+    },
+    {
+     "id": 3490,
+     "name": "Padel Parc MT Haryono By DOOgether",
+     "slug": "padel-parc-mt-haryono-by-doogether",
+     "brand": "Padel Parc",
+     "courts": 3,
+     "booked_hours": 16.0,
+     "slot_hours": 18.0
+    },
+    {
+     "id": 3942,
+     "name": "Dome Padel, Tebet",
+     "slug": "dome-padel-tebet",
+     "brand": "Dome Padel, Tebet",
+     "courts": 2,
+     "booked_hours": 6.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 4415,
+     "name": "Fork Padel",
+     "slug": "fork-padel",
+     "brand": "Fork Padel",
+     "courts": 4,
+     "booked_hours": 15.0,
+     "slot_hours": 24.0
+    },
+    {
+     "id": 2618,
+     "name": "Racket Kuningan",
+     "slug": "racket-kuningan",
+     "brand": "Racket Kuningan",
+     "courts": 5,
+     "booked_hours": 24.0,
+     "slot_hours": 25.0
+    },
+    {
+     "id": 1734,
+     "name": "Corner Sport Padel Pondok Pinang",
+     "slug": "corner-sport-padel-pondok-pinang",
+     "brand": "Corner Sport Padel Pondok Pinang",
+     "courts": 1,
+     "booked_hours": 2.0,
+     "slot_hours": 6.0
+    },
+    {
+     "id": 1857,
+     "name": "Padl Out",
+     "slug": "padl-out",
+     "brand": "Padl Out",
+     "courts": 2,
+     "booked_hours": 6.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 2165,
+     "name": "HQ Padel & Tennis",
+     "slug": "hq-padel-tennis",
+     "brand": "HQ Padel & Tennis",
+     "courts": 7,
+     "booked_hours": 21.0,
+     "slot_hours": 35.0
+    },
+    {
+     "id": 1681,
+     "name": "Republic Padel Simprug",
+     "slug": "republic-padel-simprug",
+     "brand": "Republic Padel",
+     "courts": 7,
+     "booked_hours": 17.0,
+     "slot_hours": 35.0
+    },
+    {
+     "id": 3918,
+     "name": "Oasis Padel Kuningan",
+     "slug": "oasis-padel-kuningan",
+     "brand": "Oasis Padel Kuningan",
+     "courts": 7,
+     "booked_hours": 9.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 1250,
+     "name": "Wonderball Padel Setiabudi",
+     "slug": "wonderball-padel-setiabudi",
+     "brand": "Wonderball Padel Setiabudi",
+     "courts": 2,
+     "booked_hours": 6.0,
+     "slot_hours": 10.0
+    },
+    {
+     "id": 3255,
+     "name": "GOAT Arena Cibis",
+     "slug": "goat-arena-cibis",
+     "brand": "GOAT Arena Cibis",
+     "courts": 4,
+     "booked_hours": 6.0,
+     "slot_hours": 24.0
+    },
+    {
+     "id": 4628,
+     "name": "PPPLATZ",
+     "slug": "ppplatz",
+     "brand": "PPPLATZ",
+     "courts": 2,
+     "booked_hours": 4.0,
+     "slot_hours": 8.0
+    },
+    {
+     "id": 3211,
+     "name": "Desimal Padel",
+     "slug": "desimal-padel",
+     "brand": "Desimal Padel",
+     "courts": 7,
+     "booked_hours": 11.0,
+     "slot_hours": 25.0
+    },
+    {
+     "id": 2859,
+     "name": "Victoria Social Club - Kemang",
+     "slug": "victoria-social-club-kemang",
+     "brand": "Victoria Social Club - Kemang",
+     "courts": 4,
+     "booked_hours": 12.0,
+     "slot_hours": 20.0
+    },
+    {
+     "id": 1704,
+     "name": "Mr Padel Cipete",
+     "slug": "mr-padel-cipete",
+     "brand": "Mr Padel Cipete",
+     "courts": 5,
+     "booked_hours": 10.0,
+     "slot_hours": 30.0
+    },
+    {
+     "id": 3781,
+     "name": "Padel Venue",
+     "slug": "padel-venue",
+     "brand": "Padel Venue",
+     "courts": 3,
+     "booked_hours": 9.0,
+     "slot_hours": 15.0
+    },
+    {
+     "id": 1203,
+     "name": "Sport One",
+     "slug": "sport-one",
+     "brand": "Sport One",
+     "courts": 2,
+     "booked_hours": 6.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 1279,
+     "name": "PLAY! Court At Vasaka Solterra - Pejaten",
+     "slug": "play-court-at-vasaka-solterra-pejaten",
+     "brand": "PLAY! Court At Vasaka Solterra - Pejaten",
+     "courts": 7,
+     "booked_hours": 2.0,
+     "slot_hours": 24.0
+    },
+    {
+     "id": 2127,
+     "name": "Artepola",
+     "slug": "artepola",
+     "brand": "Artepola",
+     "courts": 7,
+     "booked_hours": 11.0,
+     "slot_hours": 16.0
+    },
+    {
+     "id": 2418,
+     "name": "Padel Mezcal",
+     "slug": "padel-mezcal",
+     "brand": "Padel Mezcal",
+     "courts": 5,
+     "booked_hours": 14.0,
+     "slot_hours": 30.0
+    },
+    {
+     "id": 2845,
+     "name": "The Rooftop Kyzn Kuningan",
+     "slug": "the-rooftop-kyzn-kuningan",
+     "brand": "The Rooftop Kyzn Kuningan",
+     "courts": 3,
+     "booked_hours": 5.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 3040,
+     "name": "MMS ARENA",
+     "slug": "mms-arena",
+     "brand": "MMS ARENA",
+     "courts": 2,
+     "booked_hours": 6.0,
+     "slot_hours": 10.0
+    },
+    {
+     "id": 3201,
+     "name": "Binakarsa Green Courts",
+     "slug": "binakarsa-green-courts",
+     "brand": "Binakarsa Green Courts",
+     "courts": 3,
+     "booked_hours": 7.0,
+     "slot_hours": 8.0
+    },
+    {
+     "id": 2328,
+     "name": "The Court Cirendeu",
+     "slug": "the-court-cirendeu",
+     "brand": "The Court Cirendeu",
+     "courts": 3,
+     "booked_hours": 6.0,
+     "slot_hours": 18.0
+    },
+    {
+     "id": 1710,
+     "name": "Bumi Padel Kemang",
+     "slug": "bumi-padel-kemang",
+     "brand": "Bumi Padel Kemang",
+     "courts": 3,
+     "booked_hours": 14.0,
+     "slot_hours": 18.0
+    },
+    {
+     "id": 2168,
+     "name": "The Estate Padel Club - Kemang",
+     "slug": "the-estate-padel-club-kemang",
+     "brand": "The Estate Padel Club - Kemang",
+     "courts": 2,
+     "booked_hours": 5.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 2533,
+     "name": "Padelplay",
+     "slug": "padelplay",
+     "brand": "Padelplay",
+     "courts": 5,
+     "booked_hours": 13.0,
+     "slot_hours": 20.0
+    },
+    {
+     "id": 1167,
+     "name": "Republic Padel TB Simatupang",
+     "slug": "republic-padel-tb-simatupang",
+     "brand": "Republic Padel",
+     "courts": 6,
+     "booked_hours": 20.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 2204,
+     "name": "Ribens Padel Fatmawati",
+     "slug": "ribens-padel-fatmawati",
+     "brand": "Ribens Padel Fatmawati",
+     "courts": 2,
+     "booked_hours": 4.0,
+     "slot_hours": 8.0
+    },
+    {
+     "id": 2097,
+     "name": "Gilapadel Kebayoran Lama",
+     "slug": "gilapadel-kebayoran-lama",
+     "brand": "Gilapadel Kebayoran Lama",
+     "courts": 1,
+     "booked_hours": 0.0,
+     "slot_hours": 5.0
+    },
+    {
+     "id": 4180,
+     "name": "Padel Parc Arkadia",
+     "slug": "padel-parc-arkadia",
+     "brand": "Padel Parc",
+     "courts": 6,
+     "booked_hours": 12.0,
+     "slot_hours": 30.0
+    },
+    {
+     "id": 1827,
+     "name": "Club De Padel",
+     "slug": "club-de-padel",
+     "brand": "Club De Padel",
+     "courts": 1,
+     "booked_hours": 2.0,
+     "slot_hours": 4.0
+    },
+    {
+     "id": 1848,
+     "name": "Look Padel Kahfi I Jaksel",
+     "slug": "look-padel-kahfi-i-jaksel",
+     "brand": "Look Padel Kahfi I Jaksel",
+     "courts": 2,
+     "booked_hours": 6.0,
+     "slot_hours": 10.0
+    },
+    {
+     "id": 2555,
+     "name": "La Corte De Padel",
+     "slug": "la-corte-de-padel",
+     "brand": "La Corte De Padel",
+     "courts": 2,
+     "booked_hours": 3.0,
+     "slot_hours": 4.0
+    },
+    {
+     "id": 2329,
+     "name": "Padel Bros",
+     "slug": "padel-bros",
+     "brand": "Padel Bros",
+     "courts": 2,
+     "booked_hours": 4.0,
+     "slot_hours": 8.0
+    },
+    {
+     "id": 1190,
+     "name": "Sunrise Padel - Permata Hijau",
+     "slug": "sunrise-padel-permata-hijau",
+     "brand": "Sunrise Padel - Permata Hijau",
+     "courts": 6,
+     "booked_hours": 0.0,
+     "slot_hours": 15.0
+    },
+    {
+     "id": 1640,
+     "name": "Bounce Padel",
+     "slug": "bounce-padel",
+     "brand": "Bounce Padel",
+     "courts": 8,
+     "booked_hours": 1.0,
+     "slot_hours": 10.0
+    },
+    {
+     "id": 3563,
+     "name": "Lifestyle Capital Club (LCC): Padel Court, Padel/Tennis/Golf Simulator, Cafe & Working Space",
+     "slug": "lifestyle-capital-club-lcc-padel-court-padeltennisgolf-simulator-cafe-working-space",
+     "brand": "Lifestyle Capital Club (LCC): Padel Court, Padel/Tennis/Golf Simulator, Cafe & Working Space",
+     "courts": 16,
+     "booked_hours": 10.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 1513,
+     "name": "911 Court Syndicate.jkt",
+     "slug": "911-court-syndicatejkt",
+     "brand": "911 Court Syndicate.jkt",
+     "courts": 4,
+     "booked_hours": 8.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 2486,
+     "name": "K30 Padel",
+     "slug": "k30-padel",
+     "brand": "K30 Padel",
+     "courts": 1,
+     "booked_hours": 2.0,
+     "slot_hours": 2.0
+    },
+    {
+     "id": 3520,
+     "name": "Clubhouse Gandaria",
+     "slug": "clubhouse-gandaria",
+     "brand": "Clubhouse Gandaria",
+     "courts": 4,
+     "booked_hours": 9.0,
+     "slot_hours": 16.0
+    },
+    {
+     "id": 3075,
+     "name": "BM Padel Jagakarsa",
+     "slug": "bm-padel-jagakarsa",
+     "brand": "BM Padel Jagakarsa",
+     "courts": 3,
+     "booked_hours": 2.0,
+     "slot_hours": 18.0
+    },
+    {
+     "id": 3128,
+     "name": "Fourthwall",
+     "slug": "fourthwall",
+     "brand": "Fourthwall",
+     "courts": 1,
+     "booked_hours": 0.0,
+     "slot_hours": 2.0
+    },
+    {
+     "id": 3967,
+     "name": "Jungle Padel Jakarta",
+     "slug": "jungle-padel-jakarta",
+     "brand": "Jungle Padel Jakarta",
+     "courts": 4,
+     "booked_hours": 12.0,
+     "slot_hours": 20.0
+    },
+    {
+     "id": 2980,
+     "name": "TOM'S PADEL By Sira",
+     "slug": "toms-padel-by-sira",
+     "brand": "TOM'S PADEL By Sira",
+     "courts": 6,
+     "booked_hours": 9.0,
+     "slot_hours": 16.0
+    },
+    {
+     "id": 3524,
+     "name": "All Play Kemang | Padel & Pickle",
+     "slug": "all-play-kemang-padel-pickle",
+     "brand": "All Play Kemang | Padel & Pickle",
+     "courts": 5,
+     "booked_hours": 2.0,
+     "slot_hours": 18.0
+    },
+    {
+     "id": 1879,
+     "name": "Padel Station By Vsports",
+     "slug": "padel-station-by-vsports",
+     "brand": "Padel Station By Vsports",
+     "courts": 4,
+     "booked_hours": 2.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 3102,
+     "name": "Serve And Rally Reserve",
+     "slug": "serve-and-rally-reserve",
+     "brand": "Serve And Rally Reserve",
+     "courts": 1,
+     "booked_hours": 2.0,
+     "slot_hours": 3.0
+    },
+    {
+     "id": 2798,
+     "name": "Second Serve Padel",
+     "slug": "second-serve-padel",
+     "brand": "Second Serve Padel",
+     "courts": 3,
+     "booked_hours": 9.0,
+     "slot_hours": 9.0
+    },
+    {
+     "id": 4456,
+     "name": "T3 Sports & Lifestyle",
+     "slug": "t3-sports-lifestyle",
+     "brand": "T3 Sports & Lifestyle",
+     "courts": 5,
+     "booked_hours": 15.0,
+     "slot_hours": 20.0
+    },
+    {
+     "id": 3849,
+     "name": "Round Padel",
+     "slug": "round-padel",
+     "brand": "Round Padel",
+     "courts": 2,
+     "booked_hours": 0.0,
+     "slot_hours": 8.0
+    },
+    {
+     "id": 4770,
+     "name": "Republic Premier",
+     "slug": "republic-premier",
+     "brand": "Republic Padel",
+     "courts": 9,
+     "booked_hours": 30.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 5014,
+     "name": "Margot Padel",
+     "slug": "margot-padel",
+     "brand": "Margot Padel",
+     "courts": 5,
+     "booked_hours": 18.0,
+     "slot_hours": 30.0
+    }
+   ],
+   "first_run": "2026-10-01T17:56",
+   "last_run": "2026-10-01T18:00"
+  },
+  {
+   "date": "2026-10-02",
+   "offset": 1,
+   "tracked": true,
+   "venues": [
+    {
+     "id": 1006,
+     "name": "Wins Arena - Kuningan",
+     "slug": "wins-arena-kuningan",
+     "brand": "Wins Arena - Kuningan",
+     "courts": 2,
+     "booked_hours": 14.0,
+     "slot_hours": 38.0
+    },
+    {
+     "id": 903,
+     "name": "Futton Padel Club",
+     "slug": "futton-padel-club",
+     "brand": "Futton Padel Club",
+     "courts": 2,
+     "booked_hours": 14.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 1476,
+     "name": "AIR Padel",
+     "slug": "air-padel",
+     "brand": "Air Padel",
+     "courts": 3,
+     "booked_hours": 26.0,
+     "slot_hours": 51.0
+    },
+    {
+     "id": 4482,
+     "name": "Mpadl",
+     "slug": "mpadl",
+     "brand": "Mpadl",
+     "courts": 2,
+     "booked_hours": 17.0,
+     "slot_hours": 30.0
+    },
+    {
+     "id": 1649,
+     "name": "Naya Padel",
+     "slug": "naya-padel",
+     "brand": "Naya Padel",
+     "courts": 6,
+     "booked_hours": 21.0,
+     "slot_hours": 48.0
+    },
+    {
+     "id": 1416,
+     "name": "Dreamcourt Grafika Sport Arena Padel",
+     "slug": "dreamcourt-grafika-sport-arena-padel",
+     "brand": "Dreamcourt Grafika Sport Arena Padel",
+     "courts": 1,
+     "booked_hours": 8.0,
+     "slot_hours": 16.0
+    },
+    {
+     "id": 1860,
+     "name": "The Field",
+     "slug": "the-field",
+     "brand": "The Field",
+     "courts": 2,
+     "booked_hours": 8.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 3216,
+     "name": "AIR Padel Active",
+     "slug": "air-padel-active",
+     "brand": "Air Padel",
+     "courts": 6,
+     "booked_hours": 29.0,
+     "slot_hours": 90.0
+    },
+    {
+     "id": 1259,
+     "name": "Metro Sport Center Melawai",
+     "slug": "metro-sport-center-melawai",
+     "brand": "Metro Sport Center Melawai",
+     "courts": 1,
+     "booked_hours": 6.0,
+     "slot_hours": 16.0
+    },
+    {
+     "id": 3556,
+     "name": "Trilogi Arena By Duale",
+     "slug": "trilogi-arena-by-duale",
+     "brand": "Trilogi Arena By Duale",
+     "courts": 3,
+     "booked_hours": 14.0,
+     "slot_hours": 51.0
+    },
+    {
+     "id": 4157,
+     "name": "Grand Sports Padel",
+     "slug": "grand-sports-padel",
+     "brand": "Grand Sports Padel",
+     "courts": 5,
+     "booked_hours": 22.0,
+     "slot_hours": 90.0
+    },
+    {
+     "id": 1711,
+     "name": "Orion Padel Court",
+     "slug": "orion-padel-court",
+     "brand": "Orion Padel Court",
+     "courts": 3,
+     "booked_hours": 5.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 2848,
+     "name": "Space Padel ITC Fatmawati",
+     "slug": "space-padel-itc-fatmawati",
+     "brand": "Space Padel ITC Fatmawati",
+     "courts": 5,
+     "booked_hours": 10.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 3490,
+     "name": "Padel Parc MT Haryono By DOOgether",
+     "slug": "padel-parc-mt-haryono-by-doogether",
+     "brand": "Padel Parc",
+     "courts": 3,
+     "booked_hours": 26.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 3942,
+     "name": "Dome Padel, Tebet",
+     "slug": "dome-padel-tebet",
+     "brand": "Dome Padel, Tebet",
+     "courts": 2,
+     "booked_hours": 13.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 4415,
+     "name": "Fork Padel",
+     "slug": "fork-padel",
+     "brand": "Fork Padel",
+     "courts": 4,
+     "booked_hours": 23.0,
+     "slot_hours": 96.0
+    },
+    {
+     "id": 2618,
+     "name": "Racket Kuningan",
+     "slug": "racket-kuningan",
+     "brand": "Racket Kuningan",
+     "courts": 5,
+     "booked_hours": 24.0,
+     "slot_hours": 80.0
+    },
+    {
+     "id": 1734,
+     "name": "Corner Sport Padel Pondok Pinang",
+     "slug": "corner-sport-padel-pondok-pinang",
+     "brand": "Corner Sport Padel Pondok Pinang",
+     "courts": 1,
+     "booked_hours": 8.0,
+     "slot_hours": 18.0
+    },
+    {
+     "id": 1857,
+     "name": "Padl Out",
+     "slug": "padl-out",
+     "brand": "Padl Out",
+     "courts": 2,
+     "booked_hours": 16.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 2165,
+     "name": "HQ Padel & Tennis",
+     "slug": "hq-padel-tennis",
+     "brand": "HQ Padel & Tennis",
+     "courts": 7,
+     "booked_hours": 19.0,
+     "slot_hours": 126.0
+    },
+    {
+     "id": 1681,
+     "name": "Republic Padel Simprug",
+     "slug": "republic-padel-simprug",
+     "brand": "Republic Padel",
+     "courts": 7,
+     "booked_hours": 22.0,
+     "slot_hours": 119.0
+    },
+    {
+     "id": 3918,
+     "name": "Oasis Padel Kuningan",
+     "slug": "oasis-padel-kuningan",
+     "brand": "Oasis Padel Kuningan",
+     "courts": 7,
+     "booked_hours": 16.0,
+     "slot_hours": 45.0
+    },
+    {
+     "id": 1250,
+     "name": "Wonderball Padel Setiabudi",
+     "slug": "wonderball-padel-setiabudi",
+     "brand": "Wonderball Padel Setiabudi",
+     "courts": 2,
+     "booked_hours": 13.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 3255,
+     "name": "GOAT Arena Cibis",
+     "slug": "goat-arena-cibis",
+     "brand": "GOAT Arena Cibis",
+     "courts": 4,
+     "booked_hours": 10.0,
+     "slot_hours": 72.0
+    },
+    {
+     "id": 4628,
+     "name": "PPPLATZ",
+     "slug": "ppplatz",
+     "brand": "PPPLATZ",
+     "courts": 2,
+     "booked_hours": 6.0,
+     "slot_hours": 30.0
+    },
+    {
+     "id": 3211,
+     "name": "Desimal Padel",
+     "slug": "desimal-padel",
+     "brand": "Desimal Padel",
+     "courts": 7,
+     "booked_hours": 27.0,
+     "slot_hours": 80.0
+    },
+    {
+     "id": 2859,
+     "name": "Victoria Social Club - Kemang",
+     "slug": "victoria-social-club-kemang",
+     "brand": "Victoria Social Club - Kemang",
+     "courts": 4,
+     "booked_hours": 14.0,
+     "slot_hours": 68.0
+    },
+    {
+     "id": 1704,
+     "name": "Mr Padel Cipete",
+     "slug": "mr-padel-cipete",
+     "brand": "Mr Padel Cipete",
+     "courts": 5,
+     "booked_hours": 14.0,
+     "slot_hours": 90.0
+    },
+    {
+     "id": 3781,
+     "name": "Padel Venue",
+     "slug": "padel-venue",
+     "brand": "Padel Venue",
+     "courts": 3,
+     "booked_hours": 6.0,
+     "slot_hours": 51.0
+    },
+    {
+     "id": 1203,
+     "name": "Sport One",
+     "slug": "sport-one",
+     "brand": "Sport One",
+     "courts": 2,
+     "booked_hours": 7.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 1279,
+     "name": "PLAY! Court At Vasaka Solterra - Pejaten",
+     "slug": "play-court-at-vasaka-solterra-pejaten",
+     "brand": "PLAY! Court At Vasaka Solterra - Pejaten",
+     "courts": 7,
+     "booked_hours": 0.0,
+     "slot_hours": 72.0
+    },
+    {
+     "id": 2127,
+     "name": "Artepola",
+     "slug": "artepola",
+     "brand": "Artepola",
+     "courts": 7,
+     "booked_hours": 31.0,
+     "slot_hours": 64.0
+    },
+    {
+     "id": 2418,
+     "name": "Padel Mezcal",
+     "slug": "padel-mezcal",
+     "brand": "Padel Mezcal",
+     "courts": 5,
+     "booked_hours": 19.0,
+     "slot_hours": 90.0
+    },
+    {
+     "id": 2845,
+     "name": "The Rooftop Kyzn Kuningan",
+     "slug": "the-rooftop-kyzn-kuningan",
+     "brand": "The Rooftop Kyzn Kuningan",
+     "courts": 3,
+     "booked_hours": 9.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 3040,
+     "name": "MMS ARENA",
+     "slug": "mms-arena",
+     "brand": "MMS ARENA",
+     "courts": 2,
+     "booked_hours": 10.0,
+     "slot_hours": 34.0
+    },
+    {
+     "id": 3201,
+     "name": "Binakarsa Green Courts",
+     "slug": "binakarsa-green-courts",
+     "brand": "Binakarsa Green Courts",
+     "courts": 3,
+     "booked_hours": 16.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 2328,
+     "name": "The Court Cirendeu",
+     "slug": "the-court-cirendeu",
+     "brand": "The Court Cirendeu",
+     "courts": 3,
+     "booked_hours": 10.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 1710,
+     "name": "Bumi Padel Kemang",
+     "slug": "bumi-padel-kemang",
+     "brand": "Bumi Padel Kemang",
+     "courts": 3,
+     "booked_hours": 18.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 2168,
+     "name": "The Estate Padel Club - Kemang",
+     "slug": "the-estate-padel-club-kemang",
+     "brand": "The Estate Padel Club - Kemang",
+     "courts": 2,
+     "booked_hours": 9.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 2533,
+     "name": "Padelplay",
+     "slug": "padelplay",
+     "brand": "Padelplay",
+     "courts": 5,
+     "booked_hours": 13.0,
+     "slot_hours": 70.0
+    },
+    {
+     "id": 1167,
+     "name": "Republic Padel TB Simatupang",
+     "slug": "republic-padel-tb-simatupang",
+     "brand": "Republic Padel",
+     "courts": 6,
+     "booked_hours": 46.0,
+     "slot_hours": 108.0
+    },
+    {
+     "id": 2204,
+     "name": "Ribens Padel Fatmawati",
+     "slug": "ribens-padel-fatmawati",
+     "brand": "Ribens Padel Fatmawati",
+     "courts": 2,
+     "booked_hours": 7.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 2097,
+     "name": "Gilapadel Kebayoran Lama",
+     "slug": "gilapadel-kebayoran-lama",
+     "brand": "Gilapadel Kebayoran Lama",
+     "courts": 1,
+     "booked_hours": 2.0,
+     "slot_hours": 17.0
+    },
+    {
+     "id": 4180,
+     "name": "Padel Parc Arkadia",
+     "slug": "padel-parc-arkadia",
+     "brand": "Padel Parc",
+     "courts": 6,
+     "booked_hours": 25.0,
+     "slot_hours": 102.0
+    },
+    {
+     "id": 1827,
+     "name": "Club De Padel",
+     "slug": "club-de-padel",
+     "brand": "Club De Padel",
+     "courts": 1,
+     "booked_hours": 3.0,
+     "slot_hours": 16.0
+    },
+    {
+     "id": 1848,
+     "name": "Look Padel Kahfi I Jaksel",
+     "slug": "look-padel-kahfi-i-jaksel",
+     "brand": "Look Padel Kahfi I Jaksel",
+     "courts": 2,
+     "booked_hours": 14.0,
+     "slot_hours": 34.0
+    },
+    {
+     "id": 2555,
+     "name": "La Corte De Padel",
+     "slug": "la-corte-de-padel",
+     "brand": "La Corte De Padel",
+     "courts": 2,
+     "booked_hours": 0.0,
+     "slot_hours": 28.0
+    },
+    {
+     "id": 2329,
+     "name": "Padel Bros",
+     "slug": "padel-bros",
+     "brand": "Padel Bros",
+     "courts": 2,
+     "booked_hours": 6.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 1190,
+     "name": "Sunrise Padel - Permata Hijau",
+     "slug": "sunrise-padel-permata-hijau",
+     "brand": "Sunrise Padel - Permata Hijau",
+     "courts": 6,
+     "booked_hours": 0.0,
+     "slot_hours": 51.0
+    },
+    {
+     "id": 1640,
+     "name": "Bounce Padel",
+     "slug": "bounce-padel",
+     "brand": "Bounce Padel",
+     "courts": 8,
+     "booked_hours": 15.0,
+     "slot_hours": 70.0
+    },
+    {
+     "id": 3563,
+     "name": "Lifestyle Capital Club (LCC): Padel Court, Padel/Tennis/Golf Simulator, Cafe & Working Space",
+     "slug": "lifestyle-capital-club-lcc-padel-court-padeltennisgolf-simulator-cafe-working-space",
+     "brand": "Lifestyle Capital Club (LCC): Padel Court, Padel/Tennis/Golf Simulator, Cafe & Working Space",
+     "courts": 16,
+     "booked_hours": 22.0,
+     "slot_hours": 128.0
+    },
+    {
+     "id": 1513,
+     "name": "911 Court Syndicate.jkt",
+     "slug": "911-court-syndicatejkt",
+     "brand": "911 Court Syndicate.jkt",
+     "courts": 4,
+     "booked_hours": 12.0,
+     "slot_hours": 48.0
+    },
+    {
+     "id": 2486,
+     "name": "K30 Padel",
+     "slug": "k30-padel",
+     "brand": "K30 Padel",
+     "courts": 1,
+     "booked_hours": 1.0,
+     "slot_hours": 14.0
+    },
+    {
+     "id": 3520,
+     "name": "Clubhouse Gandaria",
+     "slug": "clubhouse-gandaria",
+     "brand": "Clubhouse Gandaria",
+     "courts": 4,
+     "booked_hours": 22.0,
+     "slot_hours": 60.0
+    },
+    {
+     "id": 3075,
+     "name": "BM Padel Jagakarsa",
+     "slug": "bm-padel-jagakarsa",
+     "brand": "BM Padel Jagakarsa",
+     "courts": 3,
+     "booked_hours": 0.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 3128,
+     "name": "Fourthwall",
+     "slug": "fourthwall",
+     "brand": "Fourthwall",
+     "courts": 1,
+     "booked_hours": 4.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 3967,
+     "name": "Jungle Padel Jakarta",
+     "slug": "jungle-padel-jakarta",
+     "brand": "Jungle Padel Jakarta",
+     "courts": 4,
+     "booked_hours": 8.0,
+     "slot_hours": 64.0
+    },
+    {
+     "id": 2980,
+     "name": "TOM'S PADEL By Sira",
+     "slug": "toms-padel-by-sira",
+     "brand": "TOM'S PADEL By Sira",
+     "courts": 6,
+     "booked_hours": 19.0,
+     "slot_hours": 64.0
+    },
+    {
+     "id": 3524,
+     "name": "All Play Kemang | Padel & Pickle",
+     "slug": "all-play-kemang-padel-pickle",
+     "brand": "All Play Kemang | Padel & Pickle",
+     "courts": 5,
+     "booked_hours": 4.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 1879,
+     "name": "Padel Station By Vsports",
+     "slug": "padel-station-by-vsports",
+     "brand": "Padel Station By Vsports",
+     "courts": 4,
+     "booked_hours": 7.0,
+     "slot_hours": 48.0
+    },
+    {
+     "id": 3102,
+     "name": "Serve And Rally Reserve",
+     "slug": "serve-and-rally-reserve",
+     "brand": "Serve And Rally Reserve",
+     "courts": 1,
+     "booked_hours": 2.0,
+     "slot_hours": 14.0
+    },
+    {
+     "id": 2798,
+     "name": "Second Serve Padel",
+     "slug": "second-serve-padel",
+     "brand": "Second Serve Padel",
+     "courts": 3,
+     "booked_hours": 21.0,
+     "slot_hours": 48.0
+    },
+    {
+     "id": 4456,
+     "name": "T3 Sports & Lifestyle",
+     "slug": "t3-sports-lifestyle",
+     "brand": "T3 Sports & Lifestyle",
+     "courts": 5,
+     "booked_hours": 24.0,
+     "slot_hours": 80.0
+    },
+    {
+     "id": 3849,
+     "name": "Round Padel",
+     "slug": "round-padel",
+     "brand": "Round Padel",
+     "courts": 2,
+     "booked_hours": 4.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 4770,
+     "name": "Republic Premier",
+     "slug": "republic-premier",
+     "brand": "Republic Padel",
+     "courts": 9,
+     "booked_hours": 18.0,
+     "slot_hours": 162.0
+    },
+    {
+     "id": 5014,
+     "name": "Margot Padel",
+     "slug": "margot-padel",
+     "brand": "Margot Padel",
+     "courts": 5,
+     "booked_hours": 12.0,
+     "slot_hours": 90.0
+    }
+   ],
+   "first_run": "2026-10-01T17:56",
+   "last_run": "2026-10-01T18:00"
+  },
+  {
+   "date": "2026-10-03",
+   "offset": 2,
+   "tracked": true,
+   "venues": [
+    {
+     "id": 1006,
+     "name": "Wins Arena - Kuningan",
+     "slug": "wins-arena-kuningan",
+     "brand": "Wins Arena - Kuningan",
+     "courts": 2,
+     "booked_hours": 11.0,
+     "slot_hours": 38.0
+    },
+    {
+     "id": 903,
+     "name": "Futton Padel Club",
+     "slug": "futton-padel-club",
+     "brand": "Futton Padel Club",
+     "courts": 2,
+     "booked_hours": 22.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 1476,
+     "name": "AIR Padel",
+     "slug": "air-padel",
+     "brand": "Air Padel",
+     "courts": 3,
+     "booked_hours": 23.0,
+     "slot_hours": 51.0
+    },
+    {
+     "id": 4482,
+     "name": "Mpadl",
+     "slug": "mpadl",
+     "brand": "Mpadl",
+     "courts": 2,
+     "booked_hours": 22.0,
+     "slot_hours": 34.0
+    },
+    {
+     "id": 1649,
+     "name": "Naya Padel",
+     "slug": "naya-padel",
+     "brand": "Naya Padel",
+     "courts": 6,
+     "booked_hours": 17.0,
+     "slot_hours": 48.0
+    },
+    {
+     "id": 1416,
+     "name": "Dreamcourt Grafika Sport Arena Padel",
+     "slug": "dreamcourt-grafika-sport-arena-padel",
+     "brand": "Dreamcourt Grafika Sport Arena Padel",
+     "courts": 1,
+     "booked_hours": 3.0,
+     "slot_hours": 16.0
+    },
+    {
+     "id": 1860,
+     "name": "The Field",
+     "slug": "the-field",
+     "brand": "The Field",
+     "courts": 2,
+     "booked_hours": 0.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 3216,
+     "name": "AIR Padel Active",
+     "slug": "air-padel-active",
+     "brand": "Air Padel",
+     "courts": 6,
+     "booked_hours": 15.0,
+     "slot_hours": 90.0
+    },
+    {
+     "id": 1259,
+     "name": "Metro Sport Center Melawai",
+     "slug": "metro-sport-center-melawai",
+     "brand": "Metro Sport Center Melawai",
+     "courts": 1,
+     "booked_hours": 10.0,
+     "slot_hours": 16.0
+    },
+    {
+     "id": 3556,
+     "name": "Trilogi Arena By Duale",
+     "slug": "trilogi-arena-by-duale",
+     "brand": "Trilogi Arena By Duale",
+     "courts": 3,
+     "booked_hours": 2.0,
+     "slot_hours": 51.0
+    },
+    {
+     "id": 4157,
+     "name": "Grand Sports Padel",
+     "slug": "grand-sports-padel",
+     "brand": "Grand Sports Padel",
+     "courts": 5,
+     "booked_hours": 15.0,
+     "slot_hours": 90.0
+    },
+    {
+     "id": 1711,
+     "name": "Orion Padel Court",
+     "slug": "orion-padel-court",
+     "brand": "Orion Padel Court",
+     "courts": 3,
+     "booked_hours": 10.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 2848,
+     "name": "Space Padel ITC Fatmawati",
+     "slug": "space-padel-itc-fatmawati",
+     "brand": "Space Padel ITC Fatmawati",
+     "courts": 5,
+     "booked_hours": 3.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 3490,
+     "name": "Padel Parc MT Haryono By DOOgether",
+     "slug": "padel-parc-mt-haryono-by-doogether",
+     "brand": "Padel Parc",
+     "courts": 3,
+     "booked_hours": 17.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 3942,
+     "name": "Dome Padel, Tebet",
+     "slug": "dome-padel-tebet",
+     "brand": "Dome Padel, Tebet",
+     "courts": 2,
+     "booked_hours": 9.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 4415,
+     "name": "Fork Padel",
+     "slug": "fork-padel",
+     "brand": "Fork Padel",
+     "courts": 4,
+     "booked_hours": 11.0,
+     "slot_hours": 96.0
+    },
+    {
+     "id": 2618,
+     "name": "Racket Kuningan",
+     "slug": "racket-kuningan",
+     "brand": "Racket Kuningan",
+     "courts": 5,
+     "booked_hours": 20.0,
+     "slot_hours": 80.0
+    },
+    {
+     "id": 1734,
+     "name": "Corner Sport Padel Pondok Pinang",
+     "slug": "corner-sport-padel-pondok-pinang",
+     "brand": "Corner Sport Padel Pondok Pinang",
+     "courts": 1,
+     "booked_hours": 0.0,
+     "slot_hours": 18.0
+    },
+    {
+     "id": 1857,
+     "name": "Padl Out",
+     "slug": "padl-out",
+     "brand": "Padl Out",
+     "courts": 2,
+     "booked_hours": 15.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 2165,
+     "name": "HQ Padel & Tennis",
+     "slug": "hq-padel-tennis",
+     "brand": "HQ Padel & Tennis",
+     "courts": 7,
+     "booked_hours": 28.0,
+     "slot_hours": 126.0
+    },
+    {
+     "id": 1681,
+     "name": "Republic Padel Simprug",
+     "slug": "republic-padel-simprug",
+     "brand": "Republic Padel",
+     "courts": 7,
+     "booked_hours": 25.0,
+     "slot_hours": 119.0
+    },
+    {
+     "id": 3918,
+     "name": "Oasis Padel Kuningan",
+     "slug": "oasis-padel-kuningan",
+     "brand": "Oasis Padel Kuningan",
+     "courts": 7,
+     "booked_hours": 6.0,
+     "slot_hours": 45.0
+    },
+    {
+     "id": 1250,
+     "name": "Wonderball Padel Setiabudi",
+     "slug": "wonderball-padel-setiabudi",
+     "brand": "Wonderball Padel Setiabudi",
+     "courts": 2,
+     "booked_hours": 8.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 3255,
+     "name": "GOAT Arena Cibis",
+     "slug": "goat-arena-cibis",
+     "brand": "GOAT Arena Cibis",
+     "courts": 4,
+     "booked_hours": 9.0,
+     "slot_hours": 72.0
+    },
+    {
+     "id": 4628,
+     "name": "PPPLATZ",
+     "slug": "ppplatz",
+     "brand": "PPPLATZ",
+     "courts": 2,
+     "booked_hours": 2.0,
+     "slot_hours": 30.0
+    },
+    {
+     "id": 3211,
+     "name": "Desimal Padel",
+     "slug": "desimal-padel",
+     "brand": "Desimal Padel",
+     "courts": 7,
+     "booked_hours": 13.0,
+     "slot_hours": 80.0
+    },
+    {
+     "id": 2859,
+     "name": "Victoria Social Club - Kemang",
+     "slug": "victoria-social-club-kemang",
+     "brand": "Victoria Social Club - Kemang",
+     "courts": 4,
+     "booked_hours": 10.0,
+     "slot_hours": 68.0
+    },
+    {
+     "id": 1704,
+     "name": "Mr Padel Cipete",
+     "slug": "mr-padel-cipete",
+     "brand": "Mr Padel Cipete",
+     "courts": 5,
+     "booked_hours": 24.0,
+     "slot_hours": 90.0
+    },
+    {
+     "id": 3781,
+     "name": "Padel Venue",
+     "slug": "padel-venue",
+     "brand": "Padel Venue",
+     "courts": 3,
+     "booked_hours": 2.0,
+     "slot_hours": 51.0
+    },
+    {
+     "id": 1203,
+     "name": "Sport One",
+     "slug": "sport-one",
+     "brand": "Sport One",
+     "courts": 2,
+     "booked_hours": 2.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 1279,
+     "name": "PLAY! Court At Vasaka Solterra - Pejaten",
+     "slug": "play-court-at-vasaka-solterra-pejaten",
+     "brand": "PLAY! Court At Vasaka Solterra - Pejaten",
+     "courts": 7,
+     "booked_hours": 7.0,
+     "slot_hours": 72.0
+    },
+    {
+     "id": 2127,
+     "name": "Artepola",
+     "slug": "artepola",
+     "brand": "Artepola",
+     "courts": 7,
+     "booked_hours": 7.0,
+     "slot_hours": 64.0
+    },
+    {
+     "id": 2418,
+     "name": "Padel Mezcal",
+     "slug": "padel-mezcal",
+     "brand": "Padel Mezcal",
+     "courts": 5,
+     "booked_hours": 24.0,
+     "slot_hours": 90.0
+    },
+    {
+     "id": 2845,
+     "name": "The Rooftop Kyzn Kuningan",
+     "slug": "the-rooftop-kyzn-kuningan",
+     "brand": "The Rooftop Kyzn Kuningan",
+     "courts": 3,
+     "booked_hours": 10.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 3040,
+     "name": "MMS ARENA",
+     "slug": "mms-arena",
+     "brand": "MMS ARENA",
+     "courts": 2,
+     "booked_hours": 0.0,
+     "slot_hours": 34.0
+    },
+    {
+     "id": 3201,
+     "name": "Binakarsa Green Courts",
+     "slug": "binakarsa-green-courts",
+     "brand": "Binakarsa Green Courts",
+     "courts": 3,
+     "booked_hours": 6.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 2328,
+     "name": "The Court Cirendeu",
+     "slug": "the-court-cirendeu",
+     "brand": "The Court Cirendeu",
+     "courts": 3,
+     "booked_hours": 4.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 1710,
+     "name": "Bumi Padel Kemang",
+     "slug": "bumi-padel-kemang",
+     "brand": "Bumi Padel Kemang",
+     "courts": 3,
+     "booked_hours": 19.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 2168,
+     "name": "The Estate Padel Club - Kemang",
+     "slug": "the-estate-padel-club-kemang",
+     "brand": "The Estate Padel Club - Kemang",
+     "courts": 2,
+     "booked_hours": 5.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 2533,
+     "name": "Padelplay",
+     "slug": "padelplay",
+     "brand": "Padelplay",
+     "courts": 5,
+     "booked_hours": 12.0,
+     "slot_hours": 75.0
+    },
+    {
+     "id": 1167,
+     "name": "Republic Padel TB Simatupang",
+     "slug": "republic-padel-tb-simatupang",
+     "brand": "Republic Padel",
+     "courts": 6,
+     "booked_hours": 28.0,
+     "slot_hours": 108.0
+    },
+    {
+     "id": 2204,
+     "name": "Ribens Padel Fatmawati",
+     "slug": "ribens-padel-fatmawati",
+     "brand": "Ribens Padel Fatmawati",
+     "courts": 2,
+     "booked_hours": 2.0,
+     "slot_hours": 34.0
+    },
+    {
+     "id": 2097,
+     "name": "Gilapadel Kebayoran Lama",
+     "slug": "gilapadel-kebayoran-lama",
+     "brand": "Gilapadel Kebayoran Lama",
+     "courts": 1,
+     "booked_hours": 0.0,
+     "slot_hours": 17.0
+    },
+    {
+     "id": 4180,
+     "name": "Padel Parc Arkadia",
+     "slug": "padel-parc-arkadia",
+     "brand": "Padel Parc",
+     "courts": 6,
+     "booked_hours": 1.0,
+     "slot_hours": 102.0
+    },
+    {
+     "id": 1827,
+     "name": "Club De Padel",
+     "slug": "club-de-padel",
+     "brand": "Club De Padel",
+     "courts": 1,
+     "booked_hours": 3.0,
+     "slot_hours": 16.0
+    },
+    {
+     "id": 1848,
+     "name": "Look Padel Kahfi I Jaksel",
+     "slug": "look-padel-kahfi-i-jaksel",
+     "brand": "Look Padel Kahfi I Jaksel",
+     "courts": 2,
+     "booked_hours": 14.0,
+     "slot_hours": 34.0
+    },
+    {
+     "id": 2555,
+     "name": "La Corte De Padel",
+     "slug": "la-corte-de-padel",
+     "brand": "La Corte De Padel",
+     "courts": 2,
+     "booked_hours": 0.0,
+     "slot_hours": 28.0
+    },
+    {
+     "id": 2329,
+     "name": "Padel Bros",
+     "slug": "padel-bros",
+     "brand": "Padel Bros",
+     "courts": 2,
+     "booked_hours": 0.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 1190,
+     "name": "Sunrise Padel - Permata Hijau",
+     "slug": "sunrise-padel-permata-hijau",
+     "brand": "Sunrise Padel - Permata Hijau",
+     "courts": 6,
+     "booked_hours": 4.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 1640,
+     "name": "Bounce Padel",
+     "slug": "bounce-padel",
+     "brand": "Bounce Padel",
+     "courts": 8,
+     "booked_hours": 14.0,
+     "slot_hours": 70.0
+    },
+    {
+     "id": 3563,
+     "name": "Lifestyle Capital Club (LCC): Padel Court, Padel/Tennis/Golf Simulator, Cafe & Working Space",
+     "slug": "lifestyle-capital-club-lcc-padel-court-padeltennisgolf-simulator-cafe-working-space",
+     "brand": "Lifestyle Capital Club (LCC): Padel Court, Padel/Tennis/Golf Simulator, Cafe & Working Space",
+     "courts": 16,
+     "booked_hours": 12.0,
+     "slot_hours": 128.0
+    },
+    {
+     "id": 1513,
+     "name": "911 Court Syndicate.jkt",
+     "slug": "911-court-syndicatejkt",
+     "brand": "911 Court Syndicate.jkt",
+     "courts": 4,
+     "booked_hours": 0.0,
+     "slot_hours": 48.0
+    },
+    {
+     "id": 2486,
+     "name": "K30 Padel",
+     "slug": "k30-padel",
+     "brand": "K30 Padel",
+     "courts": 1,
+     "booked_hours": 0.0,
+     "slot_hours": 14.0
+    },
+    {
+     "id": 3520,
+     "name": "Clubhouse Gandaria",
+     "slug": "clubhouse-gandaria",
+     "brand": "Clubhouse Gandaria",
+     "courts": 4,
+     "booked_hours": 22.0,
+     "slot_hours": 60.0
+    },
+    {
+     "id": 3075,
+     "name": "BM Padel Jagakarsa",
+     "slug": "bm-padel-jagakarsa",
+     "brand": "BM Padel Jagakarsa",
+     "courts": 3,
+     "booked_hours": 0.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 3128,
+     "name": "Fourthwall",
+     "slug": "fourthwall",
+     "brand": "Fourthwall",
+     "courts": 1,
+     "booked_hours": 4.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 3967,
+     "name": "Jungle Padel Jakarta",
+     "slug": "jungle-padel-jakarta",
+     "brand": "Jungle Padel Jakarta",
+     "courts": 4,
+     "booked_hours": 5.0,
+     "slot_hours": 64.0
+    },
+    {
+     "id": 2980,
+     "name": "TOM'S PADEL By Sira",
+     "slug": "toms-padel-by-sira",
+     "brand": "TOM'S PADEL By Sira",
+     "courts": 6,
+     "booked_hours": 20.0,
+     "slot_hours": 64.0
+    },
+    {
+     "id": 3524,
+     "name": "All Play Kemang | Padel & Pickle",
+     "slug": "all-play-kemang-padel-pickle",
+     "brand": "All Play Kemang | Padel & Pickle",
+     "courts": 5,
+     "booked_hours": 0.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 1879,
+     "name": "Padel Station By Vsports",
+     "slug": "padel-station-by-vsports",
+     "brand": "Padel Station By Vsports",
+     "courts": 4,
+     "booked_hours": 0.0,
+     "slot_hours": 48.0
+    },
+    {
+     "id": 3102,
+     "name": "Serve And Rally Reserve",
+     "slug": "serve-and-rally-reserve",
+     "brand": "Serve And Rally Reserve",
+     "courts": 1,
+     "booked_hours": 2.0,
+     "slot_hours": 14.0
+    },
+    {
+     "id": 2798,
+     "name": "Second Serve Padel",
+     "slug": "second-serve-padel",
+     "brand": "Second Serve Padel",
+     "courts": 3,
+     "booked_hours": 9.0,
+     "slot_hours": 48.0
+    },
+    {
+     "id": 4456,
+     "name": "T3 Sports & Lifestyle",
+     "slug": "t3-sports-lifestyle",
+     "brand": "T3 Sports & Lifestyle",
+     "courts": 5,
+     "booked_hours": 6.0,
+     "slot_hours": 80.0
+    },
+    {
+     "id": 3849,
+     "name": "Round Padel",
+     "slug": "round-padel",
+     "brand": "Round Padel",
+     "courts": 2,
+     "booked_hours": 2.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 4770,
+     "name": "Republic Premier",
+     "slug": "republic-premier",
+     "brand": "Republic Padel",
+     "courts": 9,
+     "booked_hours": 18.0,
+     "slot_hours": 162.0
+    },
+    {
+     "id": 5014,
+     "name": "Margot Padel",
+     "slug": "margot-padel",
+     "brand": "Margot Padel",
+     "courts": 5,
+     "booked_hours": 4.0,
+     "slot_hours": 90.0
+    }
+   ],
+   "first_run": "2026-10-01T17:56",
+   "last_run": "2026-10-01T18:00"
+  },
+  {
+   "date": "2026-10-04",
+   "offset": 3,
+   "tracked": true,
+   "venues": [
+    {
+     "id": 1006,
+     "name": "Wins Arena - Kuningan",
+     "slug": "wins-arena-kuningan",
+     "brand": "Wins Arena - Kuningan",
+     "courts": 2,
+     "booked_hours": 4.0,
+     "slot_hours": 38.0
+    },
+    {
+     "id": 903,
+     "name": "Futton Padel Club",
+     "slug": "futton-padel-club",
+     "brand": "Futton Padel Club",
+     "courts": 2,
+     "booked_hours": 14.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 1476,
+     "name": "AIR Padel",
+     "slug": "air-padel",
+     "brand": "Air Padel",
+     "courts": 3,
+     "booked_hours": 6.0,
+     "slot_hours": 51.0
+    },
+    {
+     "id": 4482,
+     "name": "Mpadl",
+     "slug": "mpadl",
+     "brand": "Mpadl",
+     "courts": 2,
+     "booked_hours": 18.0,
+     "slot_hours": 34.0
+    },
+    {
+     "id": 1649,
+     "name": "Naya Padel",
+     "slug": "naya-padel",
+     "brand": "Naya Padel",
+     "courts": 6,
+     "booked_hours": 6.0,
+     "slot_hours": 48.0
+    },
+    {
+     "id": 1416,
+     "name": "Dreamcourt Grafika Sport Arena Padel",
+     "slug": "dreamcourt-grafika-sport-arena-padel",
+     "brand": "Dreamcourt Grafika Sport Arena Padel",
+     "courts": 1,
+     "booked_hours": 0.0,
+     "slot_hours": 16.0
+    },
+    {
+     "id": 1860,
+     "name": "The Field",
+     "slug": "the-field",
+     "brand": "The Field",
+     "courts": 2,
+     "booked_hours": 4.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 3216,
+     "name": "AIR Padel Active",
+     "slug": "air-padel-active",
+     "brand": "Air Padel",
+     "courts": 6,
+     "booked_hours": 22.0,
+     "slot_hours": 90.0
+    },
+    {
+     "id": 1259,
+     "name": "Metro Sport Center Melawai",
+     "slug": "metro-sport-center-melawai",
+     "brand": "Metro Sport Center Melawai",
+     "courts": 1,
+     "booked_hours": 9.0,
+     "slot_hours": 16.0
+    },
+    {
+     "id": 3556,
+     "name": "Trilogi Arena By Duale",
+     "slug": "trilogi-arena-by-duale",
+     "brand": "Trilogi Arena By Duale",
+     "courts": 3,
+     "booked_hours": 0.0,
+     "slot_hours": 51.0
+    },
+    {
+     "id": 4157,
+     "name": "Grand Sports Padel",
+     "slug": "grand-sports-padel",
+     "brand": "Grand Sports Padel",
+     "courts": 5,
+     "booked_hours": 2.0,
+     "slot_hours": 90.0
+    },
+    {
+     "id": 1711,
+     "name": "Orion Padel Court",
+     "slug": "orion-padel-court",
+     "brand": "Orion Padel Court",
+     "courts": 3,
+     "booked_hours": 6.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 2848,
+     "name": "Space Padel ITC Fatmawati",
+     "slug": "space-padel-itc-fatmawati",
+     "brand": "Space Padel ITC Fatmawati",
+     "courts": 5,
+     "booked_hours": 0.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 3490,
+     "name": "Padel Parc MT Haryono By DOOgether",
+     "slug": "padel-parc-mt-haryono-by-doogether",
+     "brand": "Padel Parc",
+     "courts": 3,
+     "booked_hours": 12.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 3942,
+     "name": "Dome Padel, Tebet",
+     "slug": "dome-padel-tebet",
+     "brand": "Dome Padel, Tebet",
+     "courts": 2,
+     "booked_hours": 8.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 4415,
+     "name": "Fork Padel",
+     "slug": "fork-padel",
+     "brand": "Fork Padel",
+     "courts": 4,
+     "booked_hours": 0.0,
+     "slot_hours": 96.0
+    },
+    {
+     "id": 2618,
+     "name": "Racket Kuningan",
+     "slug": "racket-kuningan",
+     "brand": "Racket Kuningan",
+     "courts": 5,
+     "booked_hours": 10.0,
+     "slot_hours": 80.0
+    },
+    {
+     "id": 1734,
+     "name": "Corner Sport Padel Pondok Pinang",
+     "slug": "corner-sport-padel-pondok-pinang",
+     "brand": "Corner Sport Padel Pondok Pinang",
+     "courts": 1,
+     "booked_hours": 0.0,
+     "slot_hours": 18.0
+    },
+    {
+     "id": 1857,
+     "name": "Padl Out",
+     "slug": "padl-out",
+     "brand": "Padl Out",
+     "courts": 2,
+     "booked_hours": 2.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 2165,
+     "name": "HQ Padel & Tennis",
+     "slug": "hq-padel-tennis",
+     "brand": "HQ Padel & Tennis",
+     "courts": 7,
+     "booked_hours": 0.0,
+     "slot_hours": 126.0
+    },
+    {
+     "id": 1681,
+     "name": "Republic Padel Simprug",
+     "slug": "republic-padel-simprug",
+     "brand": "Republic Padel",
+     "courts": 7,
+     "booked_hours": 23.0,
+     "slot_hours": 119.0
+    },
+    {
+     "id": 3918,
+     "name": "Oasis Padel Kuningan",
+     "slug": "oasis-padel-kuningan",
+     "brand": "Oasis Padel Kuningan",
+     "courts": 7,
+     "booked_hours": 15.0,
+     "slot_hours": 45.0
+    },
+    {
+     "id": 1250,
+     "name": "Wonderball Padel Setiabudi",
+     "slug": "wonderball-padel-setiabudi",
+     "brand": "Wonderball Padel Setiabudi",
+     "courts": 2,
+     "booked_hours": 6.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 3255,
+     "name": "GOAT Arena Cibis",
+     "slug": "goat-arena-cibis",
+     "brand": "GOAT Arena Cibis",
+     "courts": 4,
+     "booked_hours": 17.0,
+     "slot_hours": 72.0
+    },
+    {
+     "id": 4628,
+     "name": "PPPLATZ",
+     "slug": "ppplatz",
+     "brand": "PPPLATZ",
+     "courts": 2,
+     "booked_hours": 2.0,
+     "slot_hours": 30.0
+    },
+    {
+     "id": 3211,
+     "name": "Desimal Padel",
+     "slug": "desimal-padel",
+     "brand": "Desimal Padel",
+     "courts": 7,
+     "booked_hours": 13.0,
+     "slot_hours": 80.0
+    },
+    {
+     "id": 2859,
+     "name": "Victoria Social Club - Kemang",
+     "slug": "victoria-social-club-kemang",
+     "brand": "Victoria Social Club - Kemang",
+     "courts": 4,
+     "booked_hours": 32.0,
+     "slot_hours": 68.0
+    },
+    {
+     "id": 1704,
+     "name": "Mr Padel Cipete",
+     "slug": "mr-padel-cipete",
+     "brand": "Mr Padel Cipete",
+     "courts": 5,
+     "booked_hours": 10.0,
+     "slot_hours": 90.0
+    },
+    {
+     "id": 3781,
+     "name": "Padel Venue",
+     "slug": "padel-venue",
+     "brand": "Padel Venue",
+     "courts": 3,
+     "booked_hours": 6.0,
+     "slot_hours": 51.0
+    },
+    {
+     "id": 1203,
+     "name": "Sport One",
+     "slug": "sport-one",
+     "brand": "Sport One",
+     "courts": 2,
+     "booked_hours": 2.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 1279,
+     "name": "PLAY! Court At Vasaka Solterra - Pejaten",
+     "slug": "play-court-at-vasaka-solterra-pejaten",
+     "brand": "PLAY! Court At Vasaka Solterra - Pejaten",
+     "courts": 7,
+     "booked_hours": 2.0,
+     "slot_hours": 72.0
+    },
+    {
+     "id": 2127,
+     "name": "Artepola",
+     "slug": "artepola",
+     "brand": "Artepola",
+     "courts": 7,
+     "booked_hours": 6.0,
+     "slot_hours": 64.0
+    },
+    {
+     "id": 2418,
+     "name": "Padel Mezcal",
+     "slug": "padel-mezcal",
+     "brand": "Padel Mezcal",
+     "courts": 5,
+     "booked_hours": 16.0,
+     "slot_hours": 90.0
+    },
+    {
+     "id": 2845,
+     "name": "The Rooftop Kyzn Kuningan",
+     "slug": "the-rooftop-kyzn-kuningan",
+     "brand": "The Rooftop Kyzn Kuningan",
+     "courts": 3,
+     "booked_hours": 10.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 3040,
+     "name": "MMS ARENA",
+     "slug": "mms-arena",
+     "brand": "MMS ARENA",
+     "courts": 2,
+     "booked_hours": 0.0,
+     "slot_hours": 34.0
+    },
+    {
+     "id": 3201,
+     "name": "Binakarsa Green Courts",
+     "slug": "binakarsa-green-courts",
+     "brand": "Binakarsa Green Courts",
+     "courts": 3,
+     "booked_hours": 2.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 2328,
+     "name": "The Court Cirendeu",
+     "slug": "the-court-cirendeu",
+     "brand": "The Court Cirendeu",
+     "courts": 3,
+     "booked_hours": 1.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 1710,
+     "name": "Bumi Padel Kemang",
+     "slug": "bumi-padel-kemang",
+     "brand": "Bumi Padel Kemang",
+     "courts": 3,
+     "booked_hours": 0.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 2168,
+     "name": "The Estate Padel Club - Kemang",
+     "slug": "the-estate-padel-club-kemang",
+     "brand": "The Estate Padel Club - Kemang",
+     "courts": 2,
+     "booked_hours": 12.0,
+     "slot_hours": 36.0
+    },
+    {
+     "id": 2533,
+     "name": "Padelplay",
+     "slug": "padelplay",
+     "brand": "Padelplay",
+     "courts": 5,
+     "booked_hours": 32.0,
+     "slot_hours": 75.0
+    },
+    {
+     "id": 1167,
+     "name": "Republic Padel TB Simatupang",
+     "slug": "republic-padel-tb-simatupang",
+     "brand": "Republic Padel",
+     "courts": 6,
+     "booked_hours": 42.0,
+     "slot_hours": 108.0
+    },
+    {
+     "id": 2204,
+     "name": "Ribens Padel Fatmawati",
+     "slug": "ribens-padel-fatmawati",
+     "brand": "Ribens Padel Fatmawati",
+     "courts": 2,
+     "booked_hours": 0.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 2097,
+     "name": "Gilapadel Kebayoran Lama",
+     "slug": "gilapadel-kebayoran-lama",
+     "brand": "Gilapadel Kebayoran Lama",
+     "courts": 1,
+     "booked_hours": 0.0,
+     "slot_hours": 17.0
+    },
+    {
+     "id": 4180,
+     "name": "Padel Parc Arkadia",
+     "slug": "padel-parc-arkadia",
+     "brand": "Padel Parc",
+     "courts": 6,
+     "booked_hours": 25.0,
+     "slot_hours": 102.0
+    },
+    {
+     "id": 1827,
+     "name": "Club De Padel",
+     "slug": "club-de-padel",
+     "brand": "Club De Padel",
+     "courts": 1,
+     "booked_hours": 3.0,
+     "slot_hours": 16.0
+    },
+    {
+     "id": 1848,
+     "name": "Look Padel Kahfi I Jaksel",
+     "slug": "look-padel-kahfi-i-jaksel",
+     "brand": "Look Padel Kahfi I Jaksel",
+     "courts": 2,
+     "booked_hours": 15.0,
+     "slot_hours": 34.0
+    },
+    {
+     "id": 2555,
+     "name": "La Corte De Padel",
+     "slug": "la-corte-de-padel",
+     "brand": "La Corte De Padel",
+     "courts": 2,
+     "booked_hours": 4.0,
+     "slot_hours": 28.0
+    },
+    {
+     "id": 2329,
+     "name": "Padel Bros",
+     "slug": "padel-bros",
+     "brand": "Padel Bros",
+     "courts": 2,
+     "booked_hours": 4.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 1190,
+     "name": "Sunrise Padel - Permata Hijau",
+     "slug": "sunrise-padel-permata-hijau",
+     "brand": "Sunrise Padel - Permata Hijau",
+     "courts": 6,
+     "booked_hours": 0.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 1640,
+     "name": "Bounce Padel",
+     "slug": "bounce-padel",
+     "brand": "Bounce Padel",
+     "courts": 8,
+     "booked_hours": 5.0,
+     "slot_hours": 70.0
+    },
+    {
+     "id": 3563,
+     "name": "Lifestyle Capital Club (LCC): Padel Court, Padel/Tennis/Golf Simulator, Cafe & Working Space",
+     "slug": "lifestyle-capital-club-lcc-padel-court-padeltennisgolf-simulator-cafe-working-space",
+     "brand": "Lifestyle Capital Club (LCC): Padel Court, Padel/Tennis/Golf Simulator, Cafe & Working Space",
+     "courts": 16,
+     "booked_hours": 14.0,
+     "slot_hours": 128.0
+    },
+    {
+     "id": 1513,
+     "name": "911 Court Syndicate.jkt",
+     "slug": "911-court-syndicatejkt",
+     "brand": "911 Court Syndicate.jkt",
+     "courts": 4,
+     "booked_hours": 0.0,
+     "slot_hours": 48.0
+    },
+    {
+     "id": 2486,
+     "name": "K30 Padel",
+     "slug": "k30-padel",
+     "brand": "K30 Padel",
+     "courts": 1,
+     "booked_hours": 0.0,
+     "slot_hours": 14.0
+    },
+    {
+     "id": 3520,
+     "name": "Clubhouse Gandaria",
+     "slug": "clubhouse-gandaria",
+     "brand": "Clubhouse Gandaria",
+     "courts": 4,
+     "booked_hours": 12.0,
+     "slot_hours": 60.0
+    },
+    {
+     "id": 3075,
+     "name": "BM Padel Jagakarsa",
+     "slug": "bm-padel-jagakarsa",
+     "brand": "BM Padel Jagakarsa",
+     "courts": 3,
+     "booked_hours": 1.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 3128,
+     "name": "Fourthwall",
+     "slug": "fourthwall",
+     "brand": "Fourthwall",
+     "courts": 1,
+     "booked_hours": 12.0,
+     "slot_hours": 12.0
+    },
+    {
+     "id": 3967,
+     "name": "Jungle Padel Jakarta",
+     "slug": "jungle-padel-jakarta",
+     "brand": "Jungle Padel Jakarta",
+     "courts": 4,
+     "booked_hours": 3.0,
+     "slot_hours": 64.0
+    },
+    {
+     "id": 2980,
+     "name": "TOM'S PADEL By Sira",
+     "slug": "toms-padel-by-sira",
+     "brand": "TOM'S PADEL By Sira",
+     "courts": 6,
+     "booked_hours": 26.0,
+     "slot_hours": 64.0
+    },
+    {
+     "id": 3524,
+     "name": "All Play Kemang | Padel & Pickle",
+     "slug": "all-play-kemang-padel-pickle",
+     "brand": "All Play Kemang | Padel & Pickle",
+     "courts": 5,
+     "booked_hours": 0.0,
+     "slot_hours": 54.0
+    },
+    {
+     "id": 1879,
+     "name": "Padel Station By Vsports",
+     "slug": "padel-station-by-vsports",
+     "brand": "Padel Station By Vsports",
+     "courts": 4,
+     "booked_hours": 0.0,
+     "slot_hours": 48.0
+    },
+    {
+     "id": 3102,
+     "name": "Serve And Rally Reserve",
+     "slug": "serve-and-rally-reserve",
+     "brand": "Serve And Rally Reserve",
+     "courts": 1,
+     "booked_hours": 2.0,
+     "slot_hours": 14.0
+    },
+    {
+     "id": 2798,
+     "name": "Second Serve Padel",
+     "slug": "second-serve-padel",
+     "brand": "Second Serve Padel",
+     "courts": 3,
+     "booked_hours": 9.0,
+     "slot_hours": 48.0
+    },
+    {
+     "id": 4456,
+     "name": "T3 Sports & Lifestyle",
+     "slug": "t3-sports-lifestyle",
+     "brand": "T3 Sports & Lifestyle",
+     "courts": 5,
+     "booked_hours": 0.0,
+     "slot_hours": 80.0
+    },
+    {
+     "id": 3849,
+     "name": "Round Padel",
+     "slug": "round-padel",
+     "brand": "Round Padel",
+     "courts": 2,
+     "booked_hours": 4.0,
+     "slot_hours": 32.0
+    },
+    {
+     "id": 4770,
+     "name": "Republic Premier",
+     "slug": "republic-premier",
+     "brand": "Republic Padel",
+     "courts": 9,
+     "booked_hours": 2.0,
+     "slot_hours": 162.0
+    },
+    {
+     "id": 5014,
+     "name": "Margot Padel",
+     "slug": "margot-padel",
+     "brand": "Margot Padel",
+     "courts": 5,
+     "booked_hours": 13.0,
+     "slot_hours": 90.0
+    }
+   ],
+   "first_run": "2026-10-01T17:56",
+   "last_run": "2026-10-01T18:00"
+  }
+ ]
+}
