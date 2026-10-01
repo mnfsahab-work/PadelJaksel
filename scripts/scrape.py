@@ -23,7 +23,9 @@ import json
 import os
 import re
 import sys
+import threading
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
@@ -50,6 +52,40 @@ SLOTS = DATA / "slots"
 DAILY = DATA / "daily"
 
 
+class Pacer:
+    """Shared request pacing. AYO answers 429 when a client (notably a shared CI
+    address) asks too fast: on a 429 every worker pauses and the pace slows;
+    successes speed it back up gradually."""
+
+    def __init__(self, per_sec):
+        self.lock = threading.Lock()
+        self.fastest = 1 / per_sec
+        self.interval = self.fastest
+        self.next_at = 0.0
+        self.throttled = 0
+
+    def wait(self):
+        with self.lock:
+            now = time.time()
+            at = max(now, self.next_at)
+            self.next_at = at + self.interval
+        if at > now:
+            time.sleep(at - now)
+
+    def ok(self):
+        with self.lock:
+            self.interval = max(self.fastest, self.interval * 0.99)
+
+    def slow_down(self, retry_after):
+        with self.lock:
+            self.throttled += 1
+            self.interval = min(5.0, self.interval * 1.5)
+            self.next_at = max(self.next_at, time.time() + retry_after)
+
+
+PACER = Pacer(float(os.environ.get("MAX_RPS", "4")))
+
+
 def get(url, params=None, ajax=False, retries=4):
     if params:
         url += "?" + urllib.parse.urlencode(params)
@@ -57,16 +93,34 @@ def get(url, params=None, ajax=False, retries=4):
     if ajax:
         headers["X-Requested-With"] = "XMLHttpRequest"
         headers["Accept"] = "application/json"
-    for attempt in range(retries):
+    attempt = throttles = 0
+    while True:
+        if time.time() > DEADLINE:
+            raise TimeoutError("time budget used up")
+        PACER.wait()
         try:
             req = urllib.request.Request(url, headers=headers)
             with urllib.request.urlopen(req, timeout=30) as r:
-                return r.read().decode("utf-8")
+                body = r.read().decode("utf-8")
+            PACER.ok()
+            return body
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and throttles < 8:
+                throttles += 1
+                try:
+                    wait = float(e.headers.get("Retry-After") or 20)
+                except ValueError:
+                    wait = 20
+                PACER.slow_down(min(wait, 120))
+                continue
+            err = e
         except Exception as e:  # noqa: BLE001 - retry any network error
-            if attempt == retries - 1:
-                raise
-            print(f"retry {url}: {e}", file=sys.stderr)
-            time.sleep(2 ** (attempt + 1))
+            err = e
+        attempt += 1
+        if attempt >= retries:
+            raise err
+        print(f"retry {url}: {err}", file=sys.stderr)
+        time.sleep(2 ** attempt)
 
 
 def load_json(path, default):
@@ -232,6 +286,8 @@ def fetch_day(job):
         body = get(f"{BASE}/venues-ajax/op-times-and-fields",
                    {"venue_id": vid, "date": d}, ajax=True)
         return job, json.loads(body)
+    except TimeoutError:
+        return job, "skipped"
     except Exception as e:  # noqa: BLE001 - one bad venue must not sink the run
         print(f"fail venue {vid} {d}: {e}", file=sys.stderr)
         return job, None
@@ -268,7 +324,8 @@ def scrape(venues, dates, stamp):
         write_json(SLOTS / f"{d}.json", doc)
         write_daily(doc)
     print(f"scraped {len(jobs) - errors - skipped}/{len(jobs)} venue-days in {time.time() - t0:.0f}s"
-          f" ({errors} failed, {skipped} skipped for time)", flush=True)
+          f" ({errors} failed, {skipped} skipped for time, {PACER.throttled} rate-limit pauses,"
+          f" final pace {1 / PACER.interval:.1f} req/s)", flush=True)
     return errors, len(jobs) - skipped
 
 
